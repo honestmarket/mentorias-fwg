@@ -1,0 +1,40 @@
+# Publicação automática: a Netlify serve a pasta "site" (sem etapa de build).
+[build]
+  publish = "site"
+  command = ""
+
+# Arquivos enviados na plataforma (Supabase Storage, bucket "arquivos")
+[[redirects]]
+  from = "/_blob/*"
+  to = "https://wdnmmvxjxoqlztcnxopy.supabase.co/storage/v1/object/public/arquivos/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache"
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+[[headers]]
+  for = "/canvas.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+[[headers]]
+  for = "/shim.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+[[headers]]
+  for = "/config.js"
+  [headers.values]
+    Cache-Control = "no-cache"
