@@ -1880,7 +1880,7 @@ function propDefault(m){
     contato: [m.nome].concat(m.participantes||[]).filter(Boolean).join(", "),
     programa: ult ? JSON.parse(JSON.stringify(ult.programa)) : {nome:"Programa de Mentoria Framework da Gestão", meses:"6", encontros:"6", hEncontro:"3", conselho:"3", hConselho:"3", aulas:"7", hAula:"1,5", bonus:"2", hBonus:"1,5", acesso:"12", whatsapp:true},
     modulos: ult ? ult.modulos.slice() : PROP_MODULOS.slice(), bonusL: ult ? ult.bonusL.slice() : PROP_BONUS.slice(), materiais: ult ? ult.materiais.slice() : PROP_MATERIAIS.slice(),
-    diag:true, entregaveis:null, investimento: ult ? Object.assign({}, ult.investimento) : {avista:"100.000,00", parcelado:"120.000,00", parcelas:"12", forma:"no cartão", obs:""},
+    diag:true, entregaveis:null, investimento: ult ? {avista:(ult.investimento||{}).avista||(ult.investimento||{}).parcelado||"", pagamento:(ult.investimento||{}).pagamento||"A negociar"} : {avista:"", pagamento:"A negociar"},
     passos: PROP_PASSOS.slice(), criadoEm:new Date().toISOString()};
 }
 function propIntro(p){
@@ -1930,8 +1930,7 @@ function renderPropEditor(m){
     '<div class="psec"><h4>Proposta</h4><div class="grid4">'+field("pNum","Número",p.numero)+field("pData","Emissão",p.data,{extra:'type="date"'})+num("pVal","Validade (dias)",p.validade)+
       '<div><label class="lbl" for="pSt">Status</label><select class="inp" id="pSt">'+Object.keys(PROP_ST).map(function(k){ return '<option value="'+k+'"'+(p.status===k?' selected':'')+'>'+PROP_ST[k]+'</option>'; }).join("")+'</select></div></div>'+
       '<div class="grid2" style="margin-top:10px">'+field("pEmp","Empresa",menteeName(m),{extra:'disabled'})+field("pCont","Aos cuidados de",p.contato)+'</div></div>'+
-    '<div class="psec"><h4>Investimento</h4><div class="grid4">'+num("pAv","À vista (R$)",inv.avista)+num("pPa","Parcelado · total (R$)",inv.parcelado)+num("pNp","Nº de parcelas",inv.parcelas)+field("pFo","Forma do parcelado",inv.forma)+'</div>'+
-      '<div style="margin-top:10px"><label class="lbl" for="pObs">Condições (opcional)</label><input class="inp" id="pObs" value="'+esc(inv.obs||"")+'" placeholder="Ex.: à vista via PIX ou boleto; parcelado no cartão sem juros"></div></div>'+
+    '<div class="psec"><h4>Investimento</h4><div class="grid2">'+num("pAv","Valor do investimento (R$)",inv.avista||inv.parcelado)+field("pPg","Forma de pagamento",inv.pagamento||"A negociar")+'</div></div>'+
     '<div class="psec"><h4>Formato do programa</h4>'+field("pNome","Nome do programa",g.nome,{full:true})+
       '<div class="grid4" style="margin-top:10px">'+num("gMes","Duração (meses)",g.meses)+num("gEnc","Encontros individuais",g.encontros)+num("gHE","Horas por encontro",g.hEncontro)+num("gAc","Acesso à plataforma (meses)",g.acesso)+
       num("gCon","Reuniões de conselho",g.conselho)+num("gHC","Horas por reunião",g.hConselho)+num("gAu","Aulas gravadas",g.aulas)+num("gHA","Horas por aula",g.hAula)+
@@ -1945,7 +1944,7 @@ function renderPropEditor(m){
       '<div style="margin-top:10px"><label class="lbl" for="pPas">Próximos passos (um por linha)</label><textarea class="inp" id="pPas" style="min-height:80px">'+esc((p.passos||PROP_PASSOS).map(function(t){ return /^aprovação da proposta e assinatura do contrato$/i.test(t.trim()) ? "Aprovação da Proposta" : t; }).join("\n"))+'</textarea></div></div>'+
     '</div><div class="dlg-f">'+(propDraft.isNew?'<span></span>':'<button class="btn danger" id="pDel" type="button">Excluir</button>')+'<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="cNo" type="button">Cancelar</button><button class="btn" id="pSave" type="button">Salvar</button><button class="btn pri" id="pPdf" type="button">Salvar e gerar PDF</button></div></div>', function(){
       $("cNo").onclick = closeModal;
-      ["pAv","pPa"].forEach(function(id){ var i = $(id); i.onblur = function(){ if(i.value.trim()) i.value = money2(parseBR(i.value)); }; });
+      ["pAv"].forEach(function(id){ var i = $(id); i.onblur = function(){ if(i.value.trim()) i.value = money2(parseBR(i.value)); }; });
       $("pSave").onclick = function(){ savePropFromForm(m).then(function(){ closeModal(); toast("Proposta salva"); }); };
       $("pPdf").onclick = function(){ savePropFromForm(m).then(function(p2){ closeModal(); propPreview(p2); }); };
       if($("pDel")) $("pDel").onclick = function(){ var id = propDraft.p.id; closeModal(); confirmDlg("Excluir a proposta "+propDraft.p.numero+"?", "A proposta será removida do histórico desta oportunidade.", "Excluir", function(){ remove("propostas", id).then(function(){ toast("Proposta excluída"); }); }); };
@@ -1955,7 +1954,7 @@ function savePropFromForm(m){
   var p = propDraft.p, prevSt = (D.propostas.filter(function(z){ return z.id===p.id; })[0]||{}).status;
   var v = function(id){ return $(id).value.trim(); };
   p.numero = v("pNum") || p.numero; p.data = v("pData") || todayISO(); p.validade = v("pVal") || "15"; p.status = $("pSt").value; p.contato = v("pCont");
-  p.investimento = {avista: v("pAv") ? money2(parseBR(v("pAv"))) : "", parcelado: v("pPa") ? money2(parseBR(v("pPa"))) : "", parcelas: v("pNp"), forma: v("pFo"), obs: v("pObs")};
+  p.investimento = {avista: v("pAv") ? money2(parseBR(v("pAv"))) : "", pagamento: v("pPg") || "A negociar"};
   p.programa = {nome:v("pNome"), meses:v("gMes"), encontros:v("gEnc"), hEncontro:v("gHE"), acesso:v("gAc"), conselho:v("gCon"), hConselho:v("gHC"), aulas:v("gAu"), hAula:v("gHA"), bonus:v("gBo"), hBonus:v("gHB"), whatsapp:$("gWa").checked};
   p.diag = $("pDiag") ? $("pDiag").checked : false;
   var sug = propDraft.sug||[], ks = {}; document.querySelectorAll(".pSug").forEach(function(c){ if(c.checked) ks[c.dataset.k] = true; });
@@ -2014,11 +2013,10 @@ function propPages(p, m){
     (p.materiais.length?'<p><b>Importante:</b> além das aulas ao vivo e gravadas, dispomos de material complementar:</p><ul>'+p.materiais.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ul>':'')+'</div>'+
     '<p class="pp-note">As datas dos encontros são definidas em conjunto no kick-off e acompanhadas pela Plataforma de Mentorias FWG.</p>'+ppFoot(n)+'</div>');
   // 7. investimento
-  var parc = parseBR(inv.parcelado||""), np = parseInt(inv.parcelas,10)||0;
+  var valorInv = inv.avista || inv.parcelado || "";
   n++; pages.push('<div class="pp pp-inv">'+ppHead()+'<h2 class="pp-t" style="margin-top:70px">Investimento</h2><div class="pp-prices">'+
-    (inv.avista?'<div><b>R$ '+esc(inv.avista)+'</b><span>à vista</span></div>':'')+(inv.avista && inv.parcelado?'<em>ou</em>':'')+
-    (inv.parcelado?'<div><b>R$ '+esc(inv.parcelado)+'</b><span>parcelado'+(inv.forma?' '+esc(inv.forma):'')+(np?'<br>('+np+'x'+(parc?' de R$ '+esc(money2(parc/np)):'')+')':'')+'</span></div>':'')+'</div>'+
-    (inv.obs?'<p class="pp-cond">'+esc(inv.obs)+'</p>':'')+
+    (valorInv?'<div><b>R$ '+esc(valorInv)+'</b><span>valor total do programa</span></div>':'')+'</div>'+
+    '<p class="pp-pay"><span>Forma de pagamento</span>'+esc(inv.pagamento||"A negociar")+'</p>'+
     '<div class="pp-steps"><h4>Próximos passos</h4><ol>'+(p.passos||[]).map(function(t){ if(/^aprovação da proposta e assinatura do contrato$/i.test(t.trim())) t = "Aprovação da Proposta"; return '<li>'+esc(t)+'</li>'; }).join("")+'</ol><p>Proposta '+esc(p.numero||"")+' · emitida em '+esc(brDate(p.data))+' · válida por '+esc((parseInt(p.validade,10)||15)+' dias')+'.</p></div>'+
     ppFoot(n)+'</div>');
   // 8. contracapa
@@ -2046,8 +2044,8 @@ var PP_CSS = '.pp h1,.pp h2,.pp h3,.pp h4{letter-spacing:normal;font-family:inhe
 '.pp-ent{margin:0 0 14px}.pp-ent h4{margin:0 0 8px;color:#002F38;font-size:15px;border-bottom:1.5px solid #BA9239;padding-bottom:5px}.pp-ent ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.pp-ent li{display:flex;gap:10px;align-items:baseline;font-size:13.5px}.pp-ent li span{flex:none;width:22px;height:22px;border-radius:50%;background:#002F38;color:#F3F9FE;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}'+
 '.pp-tab{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}.pp-tab th{background:#002F38;color:#F3F9FE;padding:10px;text-align:center}.pp-tab th:first-child{text-align:left}.pp-tab td{padding:10px;border-bottom:1px solid #d5e2e8;text-align:center}.pp-tab td:first-child{text-align:left}.pp-tab td i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:9px}.pp-tab tr.tt td{background:#10181E;color:#fff;font-weight:700}'+
 '.pp-prices{display:flex;align-items:center;justify-content:center;gap:24px;margin:36px 0 18px}.pp-prices>div{text-align:center}.pp-prices b{display:block;background:#BA9239;color:#F3F9FE;font-size:22px;padding:9px 26px;border-radius:999px;margin-bottom:8px}.pp-prices span{font-weight:700;color:#002F38;font-size:15px}.pp-prices em{font-style:normal;font-weight:700;color:#002F38;font-size:20px}'+
-'.pp-cond{text-align:center;font-size:13px;color:#5d7178;margin:0 0 10px}'+
-'.pp-steps{position:absolute;left:120px;right:120px;top:330px;background:#eef1f3;border-radius:16px;padding:22px 26px;font-size:13.5px;line-height:1.5}.pp-steps h4{margin:0 0 10px;color:#002F38;font-size:17px}.pp-steps ol{margin:0 0 12px;padding-left:20px}.pp-steps li{margin:0 0 6px}.pp-steps p{margin:0;font-size:11.5px;color:#5d7178}'+
+'.pp-cond{text-align:center;font-size:13px;color:#5d7178;margin:0 0 10px}.pp-pay{text-align:center;font-size:17px;font-weight:700;color:#002F38;margin:4px 0 0}.pp-pay span{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#5d7178;font-weight:600;margin-bottom:4px}'+
+'.pp-steps{position:absolute;left:120px;right:120px;top:360px;background:#eef1f3;border-radius:16px;padding:22px 26px;font-size:13.5px;line-height:1.5}.pp-steps h4{margin:0 0 10px;color:#002F38;font-size:17px}.pp-steps ol{margin:0 0 12px;padding-left:20px}.pp-steps li{margin:0 0 6px}.pp-steps p{margin:0;font-size:11.5px;color:#5d7178}'+
 '.pp-pe{position:absolute;right:10px;bottom:70px;height:560px}';
 var propLibsP = null;
 function propLibs(){ if(!propLibsP) propLibsP = Promise.all(["vendor/html-to-image.js","vendor/pdf-lib.min.js"].map(function(src){ return new Promise(function(res, rej){ if(src.indexOf("html-to-image")>-1 && window.htmlToImage) return res(); if(src.indexOf("pdf-lib")>-1 && window.PDFLib) return res(); var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = function(){ rej(new Error("falha ao carregar "+src)); }; document.head.appendChild(s); }); })).catch(function(e){ propLibsP = null; throw e; }); return propLibsP; }
