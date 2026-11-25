@@ -1899,7 +1899,7 @@ function propIntro(p){
 function canvasSugestoes(state, resumo){
   var a = (state && state.assess) || {}, areaP = {}; ((resumo && resumo.areas)||[]).forEach(function(x){ areaP[x.t] = x.p; });
   var out = [];
-  ASSESS_ITEMS.forEach(function(th){ th.i.forEach(function(x){ var v = a[x[0]]; if(v==="nao" || v==="parcial") out.push({k:x[0], area:th.t, t:(v==="nao"?"Implantar ":"Aprimorar ")+x[1], v:v, p:areaP[th.t]!=null?areaP[th.t]:50}); }); });
+  ASSESS_ITEMS.forEach(function(th){ th.i.forEach(function(x){ var v = a[x[0]]; if(v==="nao" || v==="parcial") out.push({k:x[0], area:th.t, t:(v==="nao"?"":"Aprimorar ")+x[1], v:v, p:areaP[th.t]!=null?areaP[th.t]:50}); }); });
   out.sort(function(x,y){ return x.p-y.p || (x.v==="nao"?0:1)-(y.v==="nao"?0:1); });
   // pré-seleção: 3 áreas de menor maturidade, até 3 itens cada (prioriza "não tem")
   var areas = []; out.forEach(function(o){ if(areas.indexOf(o.area)<0) areas.push(o.area); });
@@ -2000,7 +2000,7 @@ function propPages(p, m){
   // 5. escopo e entregáveis (paginado)
   var ents = p.entregaveis||[];
   if(ents.length){
-    var groups = [], idx = {}; ents.forEach(function(e){ var k = e.area||"Entregáveis definidos com a empresa"; if(idx[k]==null){ idx[k] = groups.length; groups.push({t:k, i:[]}); } groups[idx[k]].i.push(e.t); });
+    var groups = [], idx = {}; ents.forEach(function(e){ var k = e.area||"Entregáveis definidos com a empresa"; if(idx[k]==null){ idx[k] = groups.length; groups.push({t:k, i:[]}); } groups[idx[k]].i.push(String(e.t||"").replace(/^\s*implantar\s+/i,"")); });
     var chunks = [[]], rows = 0; groups.forEach(function(gr){ var need = gr.i.length + 1.6; if(rows + need > 21 && chunks[chunks.length-1].length){ chunks.push([]); rows = 0; } chunks[chunks.length-1].push(gr); rows += need; });
     var k = 0;
     chunks.forEach(function(ch, ci){ n++; pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t">Escopo e entregáveis'+(chunks.length>1?' <small>('+(ci+1)+'/'+chunks.length+')</small>':'')+'</h2>'+(ci===0?'<div class="pp-pill">Onde a mentoria vai atuar em '+emp+'</div><p class="pp-lead">'+(r?'Prioridades definidas a partir dos pontos do assessment que a empresa ainda não tem ou tem parcialmente, começando pelas áreas de menor maturidade.':'Prioridades definidas com a empresa para o período do programa.')+'</p>':'')+
@@ -2020,7 +2020,7 @@ function propPages(p, m){
     (inv.parcelado?'<div><b>R$ '+esc(inv.parcelado)+'</b><span>parcelado'+(inv.forma?' '+esc(inv.forma):'')+(np?'<br>('+np+'x'+(parc?' de R$ '+esc(money2(parc/np)):'')+')':'')+'</span></div>':'')+'</div>'+
     (inv.obs?'<p class="pp-cond">'+esc(inv.obs)+'</p>':'')+
     '<div class="pp-steps"><h4>Próximos passos</h4><ol>'+(p.passos||[]).map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ol><p>Proposta '+esc(p.numero||"")+' · emitida em '+esc(brDate(p.data))+' · válida por '+esc((parseInt(p.validade,10)||15)+' dias')+'.</p></div>'+
-    '<img class="pp-pe" src="proposta/murilo-pe.webp" alt="">'+ppFoot(n)+'</div>');
+    ppFoot(n)+'</div>');
   // 8. contracapa
   pages.push('<div class="pp pp-capa"><img class="bg" src="proposta/contracapa.jpg" alt=""></div>');
   return pages;
@@ -2047,7 +2047,7 @@ var PP_CSS = '.pp h1,.pp h2,.pp h3,.pp h4{letter-spacing:normal;font-family:inhe
 '.pp-tab{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}.pp-tab th{background:#002F38;color:#F3F9FE;padding:10px;text-align:center}.pp-tab th:first-child{text-align:left}.pp-tab td{padding:10px;border-bottom:1px solid #d5e2e8;text-align:center}.pp-tab td:first-child{text-align:left}.pp-tab td i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:9px}.pp-tab tr.tt td{background:#10181E;color:#fff;font-weight:700}'+
 '.pp-prices{display:flex;align-items:center;justify-content:center;gap:24px;margin:36px 0 18px}.pp-prices>div{text-align:center}.pp-prices b{display:block;background:#BA9239;color:#F3F9FE;font-size:22px;padding:9px 26px;border-radius:999px;margin-bottom:8px}.pp-prices span{font-weight:700;color:#002F38;font-size:15px}.pp-prices em{font-style:normal;font-weight:700;color:#002F38;font-size:20px}'+
 '.pp-cond{text-align:center;font-size:13px;color:#5d7178;margin:0 0 10px}'+
-'.pp-steps{position:absolute;left:64px;top:520px;width:380px;background:#eef1f3;border-radius:16px;padding:22px 26px;font-size:13.5px;line-height:1.5}.pp-steps h4{margin:0 0 10px;color:#002F38;font-size:17px}.pp-steps ol{margin:0 0 12px;padding-left:20px}.pp-steps li{margin:0 0 6px}.pp-steps p{margin:0;font-size:11.5px;color:#5d7178}'+
+'.pp-steps{position:absolute;left:120px;right:120px;top:330px;background:#eef1f3;border-radius:16px;padding:22px 26px;font-size:13.5px;line-height:1.5}.pp-steps h4{margin:0 0 10px;color:#002F38;font-size:17px}.pp-steps ol{margin:0 0 12px;padding-left:20px}.pp-steps li{margin:0 0 6px}.pp-steps p{margin:0;font-size:11.5px;color:#5d7178}'+
 '.pp-pe{position:absolute;right:10px;bottom:70px;height:560px}';
 var propLibsP = null;
 function propLibs(){ if(!propLibsP) propLibsP = Promise.all(["vendor/html-to-image.js","vendor/pdf-lib.min.js"].map(function(src){ return new Promise(function(res, rej){ if(src.indexOf("html-to-image")>-1 && window.htmlToImage) return res(); if(src.indexOf("pdf-lib")>-1 && window.PDFLib) return res(); var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = function(){ rej(new Error("falha ao carregar "+src)); }; document.head.appendChild(s); }); })).catch(function(e){ propLibsP = null; throw e; }); return propLibsP; }
