@@ -1846,7 +1846,7 @@ var PROP_MODULOS = [
 var PROP_BONUS = ["Como capturar investimento para meu projeto?", "Governança & Conselho Empresarial - Transparência no seu negócio"];
 var PROP_MATERIAIS = ["Excel Planilhas / Simuladores", "Mapas Mentais", "Canvas de Negócios FWG", "PDFs (Playbooks)"];
 var PROP_BIO = "Empresário, investidor e especialista em gestão, Murilo Specchio é fundador e CEO da Honest Market Brasil, uma das maiores redes de microfranquias do país, com mais de 500 lojas e uma visão ousada: alcançar 5.000 unidades até 2030.\n\nCom mais de 15 anos de experiência empreendendo em diferentes segmentos, Murilo acredita que o crescimento de um país está diretamente ligado à força de seus negócios. Por isso, dedica-se a mentorar, educar e impulsionar empreendedores e líderes, ajudando a construir um Brasil mais próspero e empreendedor para as próximas gerações.";
-var PROP_PASSOS = ["Aprovação da proposta e assinatura do contrato", "Agendamento do encontro de kick-off", "Aplicação completa do Canvas FWG e definição das prioridades", "Início dos encontros mensais e acesso à plataforma de conteúdo"];
+var PROP_PASSOS = ["Aprovação da Proposta", "Agendamento do encontro de kick-off", "Aplicação completa do Canvas FWG e definição das prioridades", "Início dos encontros mensais e acesso à plataforma de conteúdo"];
 function propNumero(){
   var y = new Date().getFullYear(), n = D.propostas.filter(function(p){ return (p.numero||"").indexOf("FWG-"+y+"-")===0; }).map(function(p){ return parseInt(p.numero.split("-")[2],10)||0; });
   return "FWG-"+y+"-"+String((n.length?Math.max.apply(null,n):0)+1).padStart(3,"0");
@@ -1919,7 +1919,7 @@ function renderPropEditor(m){
       '<div style="margin-top:10px"><label class="lbl" for="pMan">Outros entregáveis (um por linha)</label><textarea class="inp" id="pMan" style="min-height:70px" placeholder="Ex.: Orçamento 2027 aprovado pelo conselho">'+esc(manual)+'</textarea></div></div>'+
     '<div class="psec"><h4>Conteúdo do programa</h4><label class="lbl" for="pMod">Temas (um por linha)</label><textarea class="inp" id="pMod" style="min-height:150px">'+esc(p.modulos.join("\n"))+'</textarea>'+
       '<div class="grid2" style="margin-top:10px"><div><label class="lbl" for="pBon">Bônus (um por linha)</label><textarea class="inp" id="pBon" style="min-height:70px">'+esc(p.bonusL.join("\n"))+'</textarea></div><div><label class="lbl" for="pMat">Materiais complementares</label><textarea class="inp" id="pMat" style="min-height:70px">'+esc(p.materiais.join("\n"))+'</textarea></div></div>'+
-      '<div style="margin-top:10px"><label class="lbl" for="pPas">Próximos passos (um por linha)</label><textarea class="inp" id="pPas" style="min-height:80px">'+esc((p.passos||PROP_PASSOS).join("\n"))+'</textarea></div></div>'+
+      '<div style="margin-top:10px"><label class="lbl" for="pPas">Próximos passos (um por linha)</label><textarea class="inp" id="pPas" style="min-height:80px">'+esc((p.passos||PROP_PASSOS).map(function(t){ return /^aprovação da proposta e assinatura do contrato$/i.test(t.trim()) ? "Aprovação da Proposta" : t; }).join("\n"))+'</textarea></div></div>'+
     '</div><div class="dlg-f">'+(propDraft.isNew?'<span></span>':'<button class="btn danger" id="pDel" type="button">Excluir</button>')+'<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="cNo" type="button">Cancelar</button><button class="btn" id="pSave" type="button">Salvar</button><button class="btn pri" id="pPdf" type="button">Salvar e gerar PDF</button></div></div>', function(){
       $("cNo").onclick = closeModal;
       ["pAv","pPa"].forEach(function(id){ var i = $(id); i.onblur = function(){ if(i.value.trim()) i.value = money2(parseBR(i.value)); }; });
@@ -1996,7 +1996,7 @@ function propPages(p, m){
     (inv.avista?'<div><b>R$ '+esc(inv.avista)+'</b><span>à vista</span></div>':'')+(inv.avista && inv.parcelado?'<em>ou</em>':'')+
     (inv.parcelado?'<div><b>R$ '+esc(inv.parcelado)+'</b><span>parcelado'+(inv.forma?' '+esc(inv.forma):'')+(np?'<br>('+np+'x'+(parc?' de R$ '+esc(money2(parc/np)):'')+')':'')+'</span></div>':'')+'</div>'+
     (inv.obs?'<p class="pp-cond">'+esc(inv.obs)+'</p>':'')+
-    '<div class="pp-steps"><h4>Próximos passos</h4><ol>'+(p.passos||[]).map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ol><p>Proposta '+esc(p.numero||"")+' · emitida em '+esc(brDate(p.data))+' · válida por '+esc((parseInt(p.validade,10)||15)+' dias')+'.</p></div>'+
+    '<div class="pp-steps"><h4>Próximos passos</h4><ol>'+(p.passos||[]).map(function(t){ if(/^aprovação da proposta e assinatura do contrato$/i.test(t.trim())) t = "Aprovação da Proposta"; return '<li>'+esc(t)+'</li>'; }).join("")+'</ol><p>Proposta '+esc(p.numero||"")+' · emitida em '+esc(brDate(p.data))+' · válida por '+esc((parseInt(p.validade,10)||15)+' dias')+'.</p></div>'+
     ppFoot(n)+'</div>');
   // 8. contracapa
   pages.push('<div class="pp pp-capa"><img class="bg" src="proposta/contracapa.jpg" alt=""></div>');
