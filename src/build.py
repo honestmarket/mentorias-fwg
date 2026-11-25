@@ -55,5 +55,9 @@ shutil.copy(os.path.join(src_dir, 'canvas.html'), os.path.join(out_dir, 'canvas.
 os.makedirs(os.path.join(out_dir, 'vendor'), exist_ok=True)
 for f in os.listdir(os.path.join(src_dir, 'vendor')):
     shutil.copy(os.path.join(src_dir, 'vendor', f), os.path.join(out_dir, 'vendor', f))
+if os.path.isdir(os.path.join(src_dir, 'proposta')):
+    os.makedirs(os.path.join(out_dir, 'proposta'), exist_ok=True)
+    for f in os.listdir(os.path.join(src_dir, 'proposta')):
+        shutil.copy(os.path.join(src_dir, 'proposta', f), os.path.join(out_dir, 'proposta', f))
 shutil.copy(os.path.join(here, 'shim.js'), os.path.join(out_dir, 'shim.js'))
 print('ok', len(s))

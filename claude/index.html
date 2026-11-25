@@ -172,6 +172,32 @@ textarea.inp{resize:vertical;min-height:80px;line-height:1.45}
 .sess:hover{border-color:var(--gold)}
 .gcl{color:var(--aqua);font-weight:700;text-decoration:none;border-bottom:1px dashed var(--gold)}
 .gcl:hover{color:var(--gold)}
+.dlg.wide{max-width:1000px}
+.nbadge{margin-left:auto;background:var(--danger);color:#fff;border-radius:999px;font-size:11px;font-weight:700;padding:1px 7px}
+.kanban{display:grid;grid-template-columns:repeat(6,minmax(175px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
+.kcol{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:120px}
+.kcol .kh{display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin:2px 4px 10px;font-size:13px;color:var(--aqua)}.kcol .kh span{font-size:11.5px;color:var(--muted)}
+.k-ganho .kh b{color:var(--ok)}.k-perdido .kh b{color:var(--danger)}.k-ganho,.k-perdido{opacity:.92}
+.kcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px;cursor:pointer;display:grid;gap:7px}.kcard:hover{border-color:var(--gold)}
+.kcard .kt{display:flex;gap:8px;align-items:center}.kcard .kt b{display:block;font-size:13.5px;color:var(--aqua);line-height:1.2}.kcard .kt small{font-size:11.5px;color:var(--muted)}.kcard .av{width:30px;height:30px;font-size:11px;flex:none}
+.kcard .km{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11.5px;color:var(--muted)}.kcard .kv{font-weight:800;color:var(--aqua);font-size:13px}.kcard .chip{font-size:10.5px;padding:1px 8px}
+.kmv{display:flex;justify-content:space-between}.kmv button{border:1px solid var(--line);background:var(--white);border-radius:999px;font-size:11.5px;font-weight:700;color:var(--aqua);padding:2px 9px;cursor:pointer;font-family:inherit}.kmv button:hover{border-color:var(--gold)}
+.kempty{text-align:center;color:var(--muted);font-size:12px;padding:16px 0}
+.fu{font-size:11.5px;font-weight:600;color:var(--aqua)}.fu.late{color:var(--danger)}.fu.today{color:#9a6b12}.fu.none{color:var(--muted);font-weight:500}
+.li .dt.late{background:#fbe9e5;color:var(--danger)}
+.ps-rascunho{background:#eef0f2;color:#59656b}.ps-enviada{background:var(--gold-soft);color:#7a5a1e}.ps-aceita{background:var(--ok-soft);color:var(--ok)}.ps-recusada,.ps-vencida{background:#fbe9e5;color:var(--danger)}
+.ke-ganho{background:var(--ok-soft);color:var(--ok)}.ke-perdido{background:#fbe9e5;color:var(--danger)}.ke-proposta,.ke-negociacao{background:var(--gold-soft);color:#7a5a1e}
+.ptab{width:100%;border-collapse:collapse;font-size:13.5px}.ptab th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:8px;border-bottom:1px solid var(--line)}.ptab td{padding:9px 8px;border-bottom:1px solid var(--line)}.ptab td .btn{margin-left:6px}
+.fuadd{display:grid;grid-template-columns:auto auto 1fr auto;gap:8px}
+.fulist{margin-top:12px;display:grid;gap:8px}.fui{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:9px 12px}.fud{flex:none;width:92px}.fud b{display:block;font-size:13px;color:var(--aqua)}.fud small{font-size:11.5px;color:var(--muted)}.fun{flex:1;font-size:13.5px;white-space:pre-wrap}.fui .x{border:0;background:none;color:var(--muted);font-size:18px;cursor:pointer}
+.mbar{display:grid;grid-template-columns:1fr 120px 46px;gap:10px;align-items:center;font-size:12.5px;margin:0 0 7px}.mbar i{display:block;height:8px;background:var(--aqua-soft);border-radius:9px;overflow:hidden}.mbar em{display:block;height:100%;background:var(--gold)}.mbar b{text-align:right;color:var(--aqua)}
+.propedit .psec{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}.propedit h4{margin:0 0 10px;color:var(--aqua);font-size:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sugbox{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-height:300px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:10px}
+.suga b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}.suga label{display:flex;gap:7px;align-items:flex-start;font-size:13px;margin:0 0 5px;cursor:pointer}.suga small{color:#9a6b12;font-weight:700}
+.ppview{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;min-height:200px}.ppview img{width:100%;border:1px solid var(--line);border-radius:6px;box-shadow:0 6px 16px -10px rgba(0,0,0,.4)}
+.ppload{grid-column:1/-1;height:200px;background:linear-gradient(90deg,var(--white),var(--aqua-soft),var(--white));background-size:200% 100%;animation:ppl 1.2s infinite;border-radius:12px}@keyframes ppl{to{background-position:-200% 0}}
+@media (max-width:900px){.grid4{grid-template-columns:1fr 1fr}.fuadd{grid-template-columns:1fr 1fr}.sugbox{grid-template-columns:1fr}}
 .li .tx span b.hr{color:var(--aqua);font-weight:700}
 .gcw{background:#fbf1e3;border:1px solid #ead9b3;color:#7a5a1e;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.45}
 .gco{color:var(--ok);font-weight:700;font-size:13px}
@@ -419,6 +445,7 @@ details.ptask{display:block}details.ptask summary{display:flex;gap:9px;align-ite
     <nav class="nav" id="nav">
       <button data-go="painel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Painel</button>
       <button data-go="mentorados"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg>Mentorados</button>
+      <button data-go="oportunidades"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>Oportunidades<span class="nbadge" id="oppBadge" hidden></span></button>
       <button data-go="agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.2"/><path d="M3 9.5h18"/><path d="M8 2.8v3.4M16 2.8v3.4"/></svg>Agenda</button>
       <button data-go="pendencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2.5 2.5L16 9"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>Pendências</button>
       <button data-go="financeiro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v19"/><path d="M17 6.5H9.8a3.2 3.2 0 0 0 0 6.4h4.4a3.2 3.2 0 0 1 0 6.4H6.5"/></svg>Financeiro</button>
@@ -663,13 +690,13 @@ var DEFAULT_ETAPAS = [
 /* =========================================================
    Camada de dados (db da plataforma, com reserva local)
    ========================================================= */
-var COLS = ["mentorados","sessoes","tarefas","arquivos","contratos","acessos","registros"];
-var D = {mentorados:[], sessoes:[], tarefas:[], arquivos:[], contratos:[], acessos:[], registros:[]};
+var COLS = ["mentorados","sessoes","tarefas","arquivos","contratos","acessos","registros","propostas"];
+var D = {mentorados:[], sessoes:[], tarefas:[], arquivos:[], contratos:[], acessos:[], registros:[], propostas:[]};
 var IS_MENTOR = true;
 var dbApi = null, assetsApi = null, userApi = null, mode = "carregando", canWrite = true, loaded = {};
 var LOCAL_KEY = "fwg-mentorias-local-v1";
 var local = null;
-function localLoad(){ try { local = JSON.parse(localStorage.getItem(LOCAL_KEY)||"null"); } catch(e){} if(!local) local = {}; ["mentorados","sessoes","tarefas","arquivos","canvas","contratos","acessos","portal","registros"].forEach(function(k){ if(!local[k]) local[k] = {}; }); }
+function localLoad(){ try { local = JSON.parse(localStorage.getItem(LOCAL_KEY)||"null"); } catch(e){} if(!local) local = {}; ["mentorados","sessoes","tarefas","arquivos","canvas","contratos","acessos","portal","registros","propostas"].forEach(function(k){ if(!local[k]) local[k] = {}; }); }
 function localSave(){ try { localStorage.setItem(LOCAL_KEY, JSON.stringify(local)); } catch(e){} }
 function localPublish(col){ D[col] = Object.keys(local[col]).map(function(id){ return Object.assign({id:id}, local[col][id]); }); loaded[col]=true; }
 
@@ -741,8 +768,8 @@ function sessNumber(s){ var ss = sessOf(s.mid).filter(function(x){ return x.stat
 var R = {view:"painel", mid:null, tab:"visao"};
 function readHash(){
   var h = (location.hash||"").replace(/^#/,"");
-  if(/^m-[a-z0-9]+$/i.test(h)){ R.view="mentorado"; if(R.mid!==h.slice(2)){ R.mid=h.slice(2); R.tab="visao"; } }
-  else if(["painel","mentorados","agenda","pendencias","financeiro"].indexOf(h)>-1){ R.view=h; R.mid=null; }
+  if(/^m-[a-z0-9]+$/i.test(h)){ R.view="mentorado"; if(R.mid!==h.slice(2)){ R.mid=h.slice(2); R.tab=R.nextTab||"visao"; } else if(R.nextTab) R.tab=R.nextTab; R.nextTab=null; }
+  else if(["painel","mentorados","oportunidades","agenda","pendencias","financeiro"].indexOf(h)>-1){ R.view=h; R.mid=null; }
   else if(h==="portal" && IS_MENTOR){ R.view="painel"; R.mid=null; setTimeout(function(){ portalLogin(); }, 0); }
   else { R.view="painel"; R.mid=null; }
 }
@@ -778,6 +805,7 @@ function render(force){
   else if(R.view==="agenda") main.innerHTML = html + viewAgenda();
   else if(R.view==="pendencias") main.innerHTML = html + viewPendencias();
   else if(R.view==="financeiro") main.innerHTML = html + viewFinanceiro();
+  else if(R.view==="oportunidades") main.innerHTML = html + viewOportunidades();
   else if(R.view==="mentorado"){
     var m = mentee(R.mid);
     if(!m){ main.innerHTML = html + '<div class="empty"><b>Mentorado não encontrado</b>Ele pode ter sido excluído. <br><br><button class="btn" data-go="mentorados">Ver mentorados</button></div>'; }
@@ -788,6 +816,7 @@ function render(force){
 }
 $("main").addEventListener("focusout", function(){ if(deferred) setTimeout(function(){ if(deferred && !$("main").contains(document.activeElement)) render(false); }, 120); });
 function renderSide(){
+  var ob = $("oppBadge"); if(ob){ var nL = oportunidades().filter(function(m){ var f = funilOf(m); return FUNIL_ABERTO.indexOf(f.etapa)>-1 && f.proxFollow && daysTo(f.proxFollow)<=0; }).length; ob.hidden = !nL; ob.textContent = nL; }
   var act = D.mentorados.filter(function(m){ return (m.status||"ativo")==="ativo"; }).sort(function(a,b){ return menteeName(a).localeCompare(menteeName(b)); });
   $("sideList").innerHTML = act.length ? act.map(function(m){
     return '<button data-m="'+esc(m.id)+'" class="'+(R.mid===m.id?"on":"")+'">'+avatar(m)+'<span>'+esc(menteeName(m))+'</span></button>';
@@ -921,7 +950,7 @@ function viewMentee(m){
   var h = '<div class="topbar" style="margin-bottom:8px"><button class="btn sm ghost" data-go="mentorados">'+ICON.arrow+'Mentorados</button><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="editMentorado">Editar dados</button><button class="btn pri" data-act="novaSessao" data-mid="'+esc(m.id)+'">'+ICON.plus+'Agendar mentoria</button></div></div>';
   h += '<div class="mhead">'+avatar(m,"lg")+'<div class="info"><div class="crumbs">'+esc(m.segmento||"Ambiente do mentorado")+'</div><h1>'+esc(menteeName(m))+'</h1><p class="sub">'+esc([ (m.participantes&&m.participantes.length? m.participantes.join(", ") : m.nome), m.cidade].filter(Boolean).join(" · ")||"")+' <span class="chip st-'+esc(st)+'" style="margin-left:6px">'+esc(ST_M[st])+'</span></p><div class="links">'+links.join("")+'</div></div></div>';
   var ac = acessoOf(m.id);
-  var tabs = [["visao","Visão geral"],["cronograma","Cronograma",c.total],["plano","Plano de trabalho",open],["canvas","Canvas FWG"],["arquivos","Arquivos e links",fl.length],["financeiro","Financeiro"],["acesso","Portal do mentorado", ac&&ac.ativo?"ativo":""],["dados","Dados cadastrais"]];
+  var tabs = [["visao","Visão geral"],["cronograma","Cronograma",c.total],["plano","Plano de trabalho",open],["canvas","Canvas FWG"],["arquivos","Arquivos e links",fl.length],["comercial","Comercial", (funilOf(m) && FUNIL_ABERTO.indexOf(funilOf(m).etapa)>-1) ? FUNIL_N[funilOf(m).etapa] : ""],["financeiro","Financeiro"],["acesso","Portal do mentorado", ac&&ac.ativo?"ativo":""],["dados","Dados cadastrais"]];
   h += '<div class="tabs" id="tabs">'+tabs.map(function(t){ return '<button data-tab="'+t[0]+'" class="'+(R.tab===t[0]?"on":"")+'">'+t[1]+(t[2]?'<span class="n">'+t[2]+'</span>':'')+'</button>'; }).join("")+'</div>';
   if(R.tab==="visao") h += tabVisao(m);
   else if(R.tab==="cronograma") h += tabCronograma(m);
@@ -931,6 +960,7 @@ function viewMentee(m){
   else if(R.tab==="dados") h += tabDados(m);
   else if(R.tab==="financeiro") h += tabFinanceiro(m);
   else if(R.tab==="acesso") h += tabAcesso(m);
+  else if(R.tab==="comercial") h += tabComercial(m);
   return h;
 }
 function etapasOf(m){ return Array.isArray(m.etapas) && m.etapas.length ? m.etapas : DEFAULT_ETAPAS.map(function(e,i){ return {id:"e"+i, t:e.t, d:e.d, status: i===0 ? "andamento" : "afazer"}; }); }
@@ -1280,7 +1310,7 @@ function flushCanvas(){
    ========================================================= */
 function bindMain(){
   var main = $("main");
-  main.querySelectorAll("[data-go]").forEach(function(b){ b.onclick=function(){ go(b.dataset.go); }; });
+  main.querySelectorAll("[data-go]").forEach(function(b){ b.onclick=function(e){ if(e.target.closest("[data-act]")!==null && e.target.closest("[data-act]")!==b) return; if(b.dataset.tabgo) R.nextTab = b.dataset.tabgo; go(b.dataset.go); }; });
   main.querySelectorAll(".task[data-t]").forEach(function(b){ b.addEventListener("click", function(e){ if(e.target.closest("[data-act]") || e.target.closest("a")) return; openTask(b.dataset.t); }); });
   main.querySelectorAll("[data-m]").forEach(function(b){ if(!b.closest(".task")) b.onclick=function(){ go("m-"+b.dataset.m); }; });
   main.querySelectorAll("[data-s]").forEach(function(b){ b.onclick=function(e){ if(e.target.closest("a")) return; e.stopPropagation(); openSession(b.dataset.s); }; });
@@ -1293,6 +1323,7 @@ function bindMain(){
   var pr = $("pfResp"); if(pr) pr.querySelectorAll("button").forEach(function(b){ b.onclick=function(){ pf.resp=b.dataset.v; render(); }; });
   var ps = $("pfSt"); if(ps) ps.querySelectorAll("button").forEach(function(b){ b.onclick=function(){ pf.st=b.dataset.v; render(); }; });
   bindFin(); bindFinGlobal();
+  if(R.view==="mentorado" && R.tab==="comercial" && mentee(R.mid)) bindComercial(mentee(R.mid));
   var nt = $("ntTxt"); if(nt) nt.onkeydown=function(e){ if(e.key==="Enter"){ e.preventDefault(); act("addTask"); } };
   var dz = $("dropZone");
   if(dz){
@@ -1306,6 +1337,7 @@ function act(a, el, e){
   if(a==="finPrev"){ finMes -= 3; return render(); }
   if(a==="finNext"){ finMes += 3; return render(); }
   if(/^a[A-Z]/.test(a)) return acessoAct(a, el);
+  if(["novaOpp","oppMove","fuNovo","oppSalvar","fuAdd","fuDel","propNova","propAbrir","propPdf"].indexOf(a)>-1) return oppAct(a, el);
   if(a==="gcToggle"){ gcSetAuto(el.checked); GC.msg=""; if(el.checked) toast("Sincronização automática ligada"); return render(); }
   if(a==="gcSyncAll") return gcSyncAll();
   if(a==="novoMentorado") return editMentee(null);
@@ -1336,7 +1368,7 @@ function cycleEtapa(i){
 }
 
 /* ---------- Diálogos ---------- */
-function openModal(html, onOpen){ $("dlg").innerHTML = html; $("modal").classList.add("open"); if(onOpen) onOpen(); }
+function openModal(html, onOpen, cls){ $("dlg").className = "dlg"+(cls?" "+cls:""); $("dlg").innerHTML = html; $("modal").classList.add("open"); if(onOpen) onOpen(); }
 function closeModal(){ $("modal").classList.remove("open"); }
 $("modal").addEventListener("mousedown", function(e){ if(e.target===$("modal")) closeModal(); });
 function confirmDlg(title, text, yes, fn){
@@ -1644,6 +1676,396 @@ function importBackup(file){
 }
 
 if($("bkLink")) $("bkLink").onclick = function(e){ e.preventDefault(); backupDlg(); };
+/* =========================================================
+   Oportunidades (funil comercial), follow-ups e propostas
+   ========================================================= */
+var FUNIL = [["lead","Lead"],["diagnostico","Diagnóstico"],["proposta","Proposta enviada"],["negociacao","Negociação"],["ganho","Ganho"],["perdido","Perdido"]];
+var FUNIL_N = {}; FUNIL.forEach(function(f){ FUNIL_N[f[0]] = f[1]; });
+var FUNIL_ABERTO = ["lead","diagnostico","proposta","negociacao"];
+var CANAIS = ["WhatsApp","Ligação","E-mail","Reunião online","Reunião presencial","Outro"];
+var PROP_ST = {rascunho:"Rascunho", enviada:"Enviada", aceita:"Aceita", recusada:"Recusada"};
+function funilOf(m){ var f = m && m.funil; if(f && f.etapa) return f; return m && m.status==="prospect" ? {etapa:"lead"} : null; }
+function oportunidades(){ return D.mentorados.filter(function(m){ return !!funilOf(m); }); }
+function propsOf(mid){ return D.propostas.filter(function(p){ return p.mid===mid; }).sort(function(a,b){ return (b.data||"").localeCompare(a.data||"") || (b.criadoEm||"").localeCompare(a.criadoEm||""); }); }
+function propValor(p){ var i = p && p.investimento || {}; return parseBR(i.avista||"") || parseBR(i.parcelado||"") || 0; }
+function propVencida(p){ if(p.status!=="enviada" || !p.data) return false; var d = parseISO(p.data); if(!d) return false; d.setDate(d.getDate() + (parseInt(p.validade,10)||15)); var t = new Date(); t.setHours(0,0,0,0); return d < t; }
+function propStChip(p){ var v = propVencida(p); return '<span class="chip ps-'+(v?"vencida":esc(p.status||"rascunho"))+'">'+(v?"Vencida":esc(PROP_ST[p.status||"rascunho"]))+'</span>'; }
+function oppValor(m){ var f = funilOf(m)||{}; var ps = propsOf(m.id).filter(function(p){ return p.status!=="recusada"; }); return ps.length ? propValor(ps[0]) : (parseBR(f.valor||"")||0); }
+function followTag(f){
+  if(!f || !f.proxFollow) return '<span class="fu none">Sem follow-up agendado</span>';
+  var d = daysTo(f.proxFollow);
+  if(d<0) return '<span class="fu late">Follow-up atrasado · '+esc(brDate(f.proxFollow))+'</span>';
+  if(d===0) return '<span class="fu today">Follow-up hoje</span>';
+  return '<span class="fu">Follow-up '+(d===1?"amanhã":"em "+esc(brDate(f.proxFollow)))+'</span>';
+}
+function saveFunil(m, patch){
+  var c = strip(m); c.funil = Object.assign({}, funilOf(m)||{etapa:"lead"}, patch, {atualizadoEm:new Date().toISOString()});
+  if(patch.etapa==="ganho" && c.status==="prospect") c.status = "ativo";
+  if(patch.etapa && patch.etapa!=="ganho" && patch.etapa!=="perdido" && !c.status) c.status = "prospect";
+  return store("mentorados", m.id, c);
+}
+
+/* ---------- Tela: Oportunidades ---------- */
+function viewOportunidades(){
+  var ops = oportunidades(), abertas = ops.filter(function(m){ return FUNIL_ABERTO.indexOf(funilOf(m).etapa)>-1; });
+  var ganhas = ops.filter(function(m){ return funilOf(m).etapa==="ganho"; }), perdidas = ops.filter(function(m){ return funilOf(m).etapa==="perdido"; });
+  var emProp = abertas.filter(function(m){ var e = funilOf(m).etapa; return e==="proposta" || e==="negociacao"; });
+  var vProp = emProp.reduce(function(s, m){ return s + oppValor(m); }, 0), vPipe = abertas.reduce(function(s, m){ return s + oppValor(m); }, 0);
+  var late = abertas.filter(function(m){ var f = funilOf(m); return f.proxFollow && daysTo(f.proxFollow)<=0; });
+  var conv = ganhas.length+perdidas.length ? Math.round(ganhas.length/(ganhas.length+perdidas.length)*100) : null;
+  var h = '<div class="topbar"><div><div class="crumbs">Comercial</div><h1>Oportunidades</h1><p class="sub">Empresas em prospecção, follow-ups e propostas emitidas. Visível só para você.</p></div><button class="btn pri" data-act="novaOpp">'+ICON.plus+'Nova oportunidade</button></div>';
+  h += '<div class="kpis"><div class="kpi dark"><div class="v">'+abertas.length+'</div><div class="k">Oportunidades em aberto · '+esc(brl(vPipe))+'</div></div>'+
+    '<div class="kpi gold"><div class="v">'+esc(brl(vProp))+'</div><div class="k">Em propostas e negociação ('+emProp.length+')</div></div>'+
+    '<div class="kpi"><div class="v" style="color:'+(late.length?"var(--danger)":"var(--aqua)")+'">'+late.length+'</div><div class="k">Follow-ups para hoje ou atrasados</div></div>'+
+    '<div class="kpi"><div class="v" style="color:var(--ok)">'+ganhas.length+(conv!=null?' <small style="font-size:14px;color:var(--muted)">· '+conv+'% conversão</small>':'')+'</div><div class="k">Ganhas · '+esc(brl(ganhas.reduce(function(s,m){ return s+oppValor(m); },0)))+'</div></div></div>';
+  if(!ops.length) return h + '<div class="card"><div class="empty"><b>Nenhuma oportunidade ainda</b>Cadastre a empresa que você está prospectando em “Nova oportunidade”. Mentorados com status “Em negociação” aparecem aqui automaticamente.<br><br><button class="btn pri" data-act="novaOpp">'+ICON.plus+'Nova oportunidade</button></div></div>';
+  // follow-ups dos próximos 7 dias
+  var fu = abertas.filter(function(m){ var f = funilOf(m); return f.proxFollow && daysTo(f.proxFollow)<=7; }).sort(function(a,b){ return funilOf(a).proxFollow.localeCompare(funilOf(b).proxFollow); });
+  var sem = abertas.filter(function(m){ return !funilOf(m).proxFollow; });
+  h += '<div class="card" style="margin-bottom:18px"><div class="card-h"><h3>Follow-ups da semana</h3><small>'+(fu.length?fu.length+' para fazer':'Nada agendado para os próximos 7 dias')+(sem.length?' · '+sem.length+' sem data definida':'')+'</small></div>';
+  if(fu.length) h += '<div class="card-b"><div class="list">'+fu.map(function(m){ var f = funilOf(m), d = daysTo(f.proxFollow), dt = parseISO(f.proxFollow);
+    return '<div class="li" data-go="m-'+esc(m.id)+'" data-tabgo="comercial"><div class="dt'+(d<0?' late':'')+'"><b>'+dt.getDate()+'</b><small>'+MES[dt.getMonth()]+'</small></div><div class="tx"><b>'+esc(menteeName(m))+'</b><span>'+esc(FUNIL_N[f.etapa])+(f.proxAcao?' · '+esc(f.proxAcao):'')+'</span></div>'+followTag(f)+'<button class="btn sm" data-act="fuNovo" data-mid="'+esc(m.id)+'" type="button">Registrar follow-up</button></div>'; }).join("")+'</div></div>';
+  h += '</div>';
+  // funil (kanban)
+  h += '<div class="kanban">'+FUNIL.map(function(st){
+    var L = ops.filter(function(m){ return funilOf(m).etapa===st[0]; }).sort(function(a,b){ return (funilOf(a).proxFollow||"9999").localeCompare(funilOf(b).proxFollow||"9999"); });
+    var tot = L.reduce(function(s,m){ return s+oppValor(m); }, 0);
+    return '<div class="kcol k-'+st[0]+'"><div class="kh"><b>'+esc(st[1])+'</b><span>'+L.length+(tot?' · '+esc(brl(tot)):'')+'</span></div>'+
+      (L.length ? L.map(function(m){ var f = funilOf(m), ps = propsOf(m.id), r = m.resumo, idx = FUNIL.map(function(x){ return x[0]; }).indexOf(st[0]);
+        return '<div class="kcard" data-go="m-'+esc(m.id)+'" data-tabgo="comercial"><div class="kt">'+avatar(m)+'<div><b>'+esc(menteeName(m))+'</b><small>'+esc([m.nome, m.segmento].filter(Boolean).join(" · "))+'</small></div></div>'+
+          '<div class="km">'+(oppValor(m)?'<span class="kv">'+esc(brl(oppValor(m)))+'</span>':'')+(r && r.maturidade!=null?'<span>Maturidade '+fmtN(r.maturidade)+'%</span>':'')+(ps.length?propStChip(ps[0]):'')+'</div>'+
+          (FUNIL_ABERTO.indexOf(st[0])>-1 ? followTag(f) : (st[0]==="perdido" && f.motivo ? '<span class="fu none">'+esc(f.motivo)+'</span>' : ''))+
+          '<div class="kmv">'+(idx>0?'<button type="button" data-act="oppMove" data-mid="'+esc(m.id)+'" data-to="'+FUNIL[idx-1][0]+'" title="Voltar para '+esc(FUNIL[idx-1][1])+'">‹</button>':'<span></span>')+
+          (idx<FUNIL.length-2?'<button type="button" data-act="oppMove" data-mid="'+esc(m.id)+'" data-to="'+FUNIL[idx+1][0]+'" title="Avançar para '+esc(FUNIL[idx+1][1])+'">Avançar ›</button>':'')+'</div></div>'; }).join("") : '<div class="kempty">—</div>')+'</div>';
+  }).join("")+'</div>';
+  // propostas emitidas
+  var props = D.propostas.filter(function(p){ return mentee(p.mid); }).sort(function(a,b){ return (b.data||"").localeCompare(a.data||""); });
+  h += '<div class="card" style="margin-top:18px"><div class="card-h"><h3>Propostas emitidas</h3><small>'+props.length+' proposta'+(props.length!==1?'s':'')+'</small></div>';
+  if(props.length) h += '<div class="card-b" style="overflow-x:auto"><table class="ptab"><thead><tr><th>Nº</th><th>Empresa</th><th>Emissão</th><th>Validade</th><th style="text-align:right">Investimento</th><th>Status</th><th></th></tr></thead><tbody>'+props.map(function(p){ var m = mentee(p.mid);
+    return '<tr><td><b>'+esc(p.numero||"")+'</b></td><td>'+esc(menteeName(m))+'</td><td>'+esc(brDate(p.data))+'</td><td>'+esc((parseInt(p.validade,10)||15)+' dias')+'</td><td style="text-align:right">'+esc(propValor(p)?brl(propValor(p)):"—")+'</td><td>'+propStChip(p)+'</td><td style="text-align:right;white-space:nowrap"><button class="btn sm ghost" data-act="propAbrir" data-p="'+esc(p.id)+'" type="button">Abrir</button><button class="btn sm" data-act="propPdf" data-p="'+esc(p.id)+'" type="button">PDF</button></td></tr>'; }).join("")+'</tbody></table></div>';
+  else h += '<div class="card-b"><p class="sub" style="margin:0">Nenhuma proposta ainda. Abra uma oportunidade e use “Nova proposta” na aba Comercial.</p></div>';
+  return h + '</div>';
+}
+
+/* ---------- Aba do mentorado: Comercial ---------- */
+function tabComercial(m){
+  var f = funilOf(m) || {}, ps = propsOf(m.id), fus = (f.followups||[]).slice().sort(function(a,b){ return (b.data||"").localeCompare(a.data||""); });
+  var h = '<div class="cols"><div>';
+  h += '<div class="card" style="margin-bottom:18px"><div class="card-h"><h3>Oportunidade</h3>'+(f.etapa?'<span class="chip ke-'+esc(f.etapa)+'">'+esc(FUNIL_N[f.etapa])+'</span>':'<small>Ainda não está no funil</small>')+'</div><div class="card-b">'+
+    '<span class="lbl">Etapa do funil</span><div class="seg" id="oEt">'+FUNIL.map(function(x){ return '<button type="button" data-v="'+x[0]+'" class="'+(f.etapa===x[0]?"on":"")+'">'+x[1]+'</button>'; }).join("")+'</div>'+
+    '<div class="grid2" style="margin-top:12px">'+
+      '<div><label class="lbl" for="oVal">Valor estimado (R$)</label><input class="inp" id="oVal" inputmode="decimal" value="'+esc(f.valor||"")+'" placeholder="0,00"></div>'+
+      field("oOri","Origem / indicação",f.origem,{extra:'placeholder="Ex.: indicação, evento, Instagram"'})+
+      field("oProx","Próximo follow-up",f.proxFollow,{extra:'type="date"'})+
+      field("oAcao","Próxima ação",f.proxAcao,{extra:'placeholder="Ex.: apresentar proposta"'})+
+      '<div class="full" id="oMotW"'+(f.etapa==="perdido"?'':' hidden')+'><label class="lbl" for="oMot">Motivo da perda</label><input class="inp" id="oMot" value="'+esc(f.motivo||"")+'" placeholder="Ex.: preço, timing, escolheu outro"></div>'+
+      '<div class="full"><label class="lbl" for="oNot">Contexto da oportunidade</label><textarea class="inp" id="oNot" style="min-height:70px" placeholder="Dores, decisores, orçamento, concorrentes">'+esc(f.notas||"")+'</textarea></div>'+
+    '</div><div style="display:flex;justify-content:flex-end;margin-top:12px"><button class="btn pri" data-act="oppSalvar" type="button">Salvar oportunidade</button></div></div></div>';
+  h += '<div class="card"><div class="card-h"><h3>Follow-ups</h3><small>'+(fus.length?fus.length+' registrado'+(fus.length>1?'s':''):'Histórico de contatos')+'</small></div><div class="card-b">'+
+    '<div class="fuadd"><input class="inp" type="date" id="fuData" value="'+todayISO()+'" title="Data do contato"><select class="inp" id="fuCanal">'+CANAIS.map(function(c){ return '<option>'+c+'</option>'; }).join("")+'</select><input class="inp" id="fuNota" placeholder="O que foi conversado / combinado"><button class="btn pri" data-act="fuAdd" type="button">Registrar</button></div>'+
+    (fus.length ? '<div class="fulist">'+fus.map(function(x){ return '<div class="fui"><div class="fud"><b>'+esc(brDate(x.data))+'</b><small>'+esc(x.canal||"")+'</small></div><div class="fun">'+esc(x.nota||"")+'</div><button class="x" data-act="fuDel" data-fu="'+esc(x.id)+'" type="button" title="Excluir">×</button></div>'; }).join("")+'</div>' : '<p class="sub" style="margin:10px 0 0">Nenhum contato registrado ainda.</p>')+
+    '</div></div>';
+  h += '</div><div>';
+  h += '<div class="card"><div class="card-h"><h3>Propostas</h3><button class="btn sm pri" data-act="propNova" type="button">'+ICON.plus+'Nova proposta</button></div><div class="card-b">';
+  if(ps.length) h += '<div class="list">'+ps.map(function(p){ return '<div class="li"><div class="tx"><b>'+esc(p.numero||"Proposta")+' · '+esc(propValor(p)?brl(propValor(p)):"sem valor")+'</b><span>Emitida em '+esc(brDate(p.data))+' · validade '+esc((parseInt(p.validade,10)||15)+' dias')+'</span></div>'+propStChip(p)+'<div class="cvacts"><button class="btn sm ghost" data-act="propAbrir" data-p="'+esc(p.id)+'" type="button">Abrir</button><button class="btn sm" data-act="propPdf" data-p="'+esc(p.id)+'" type="button">PDF</button></div></div>'; }).join("")+'</div>';
+  else h += '<div class="empty" style="padding:18px"><b>Nenhuma proposta emitida</b>A proposta usa o nome da empresa, o investimento que você definir e o diagnóstico do Canvas FWG como base dos entregáveis.</div>';
+  h += '</div></div>';
+  var r = m.resumo;
+  if(r && r.maturidade!=null) h += '<div class="card" style="margin-top:18px"><div class="card-h"><h3>Diagnóstico para a proposta</h3><small>Canvas FWG</small></div><div class="card-b"><div class="sub" style="margin:0 0 8px">Maturidade geral <b style="color:var(--aqua)">'+fmtN(r.maturidade)+'%</b></div>'+(r.areas||[]).slice().sort(function(a,b){ return a.p-b.p; }).map(function(a){ return '<div class="mbar"><span>'+esc(a.t)+'</span><i><em style="width:'+Math.max(2,a.p)+'%"></em></i><b>'+fmtN(a.p)+'%</b></div>'; }).join("")+'</div></div>';
+  else h += '<div class="card" style="margin-top:18px"><div class="card-b"><p class="sub" style="margin:0">Aplique o <b>Canvas FWG</b> nesta empresa para a proposta trazer o diagnóstico e sugerir os entregáveis a partir dos pontos fracos do assessment.</p><button class="btn sm" data-tab="canvas" style="margin-top:10px">Abrir Canvas FWG</button></div></div>';
+  return h + '</div></div>';
+}
+function bindComercial(m){
+  var et = $("oEt"); if(!et) return;
+  et.querySelectorAll("button").forEach(function(b){ b.onclick = function(){ et.querySelectorAll("button").forEach(function(z){ z.classList.toggle("on", z===b); }); $("oMotW").hidden = b.dataset.v!=="perdido"; }; });
+  var v = $("oVal"); v.onblur = function(){ if(v.value.trim()) v.value = money2(parseBR(v.value)); };
+}
+function novaOportunidade(){
+  openModal('<div class="dlg-h"><h3>Nova oportunidade</h3><p>Cadastre a empresa que você está prospectando. Depois você completa os dados, aplica o Canvas FWG e emite a proposta.</p></div><div class="dlg-b"><div class="grid2">'+
+    field("nEmp","Nome da empresa *","",{full:true})+field("nNome","Contato principal","")+field("nCargo","Cargo","")+
+    field("nSeg","Segmento","")+field("nTel","Telefone / WhatsApp","")+
+    '<div><label class="lbl" for="nVal">Valor estimado (R$)</label><input class="inp" id="nVal" inputmode="decimal" placeholder="0,00"></div>'+field("nOri","Origem / indicação","")+
+    field("nProx","Próximo follow-up","",{extra:'type="date"'})+field("nAcao","Próxima ação","",{extra:'placeholder="Ex.: reunião de diagnóstico"'})+
+    '</div></div><div class="dlg-f"><button class="btn" id="cNo">Cancelar</button><button class="btn pri" id="cYes">Cadastrar</button></div>', function(){
+      $("cNo").onclick = closeModal;
+      $("cYes").onclick = function(){
+        var emp = $("nEmp").value.trim(); if(!emp){ $("nEmp").focus(); return; }
+        var id = uid(), val = $("nVal").value.trim();
+        var m = {empresa:emp, nome:$("nNome").value.trim(), cargo:$("nCargo").value.trim(), segmento:$("nSeg").value.trim(), telefone:$("nTel").value.trim(), status:"prospect", participantes:[], criadoEm:new Date().toISOString(),
+          funil:{etapa:"lead", valor: val ? money2(parseBR(val)) : "", origem:$("nOri").value.trim(), proxFollow:$("nProx").value, proxAcao:$("nAcao").value.trim(), followups:[], criadoEm:new Date().toISOString()}};
+        closeModal(); store("mentorados", id, m).then(function(){ toast("Oportunidade cadastrada"); R.nextTab = "comercial"; go("m-"+id); });
+      };
+      setTimeout(function(){ $("nEmp").focus(); }, 30);
+    });
+}
+function followDlg(m){
+  var f = funilOf(m)||{};
+  openModal('<div class="dlg-h"><h3>Registrar follow-up · '+esc(menteeName(m))+'</h3><p>'+esc(f.proxAcao||"Registre o contato e já agende o próximo.")+'</p></div><div class="dlg-b"><div class="grid2">'+
+    field("qData","Data do contato",todayISO(),{extra:'type="date"'})+'<div><label class="lbl" for="qCanal">Canal</label><select class="inp" id="qCanal">'+CANAIS.map(function(c){ return '<option>'+c+'</option>'; }).join("")+'</select></div>'+
+    '<div class="full"><label class="lbl" for="qNota">O que foi conversado</label><textarea class="inp" id="qNota" style="min-height:80px"></textarea></div>'+
+    field("qProx","Próximo follow-up","",{extra:'type="date"'})+field("qAcao","Próxima ação",""  )+
+    '</div></div><div class="dlg-f"><button class="btn" id="cNo">Cancelar</button><button class="btn pri" id="cYes">Registrar</button></div>', function(){
+      $("cNo").onclick = closeModal;
+      $("cYes").onclick = function(){
+        var x = {id:uid(), data:$("qData").value||todayISO(), canal:$("qCanal").value, nota:$("qNota").value.trim()};
+        closeModal(); saveFunil(m, {followups:(f.followups||[]).concat([x]), proxFollow:$("qProx").value||"", proxAcao:$("qAcao").value.trim(), ultimoContato:x.data}).then(function(){ toast("Follow-up registrado"); });
+      };
+    });
+}
+function oppAct(a, el){
+  var m = el && el.dataset.mid ? mentee(el.dataset.mid) : (R.view==="mentorado" ? mentee(R.mid) : null);
+  if(a==="novaOpp") return novaOportunidade();
+  if(a==="oppMove"){ var to = el.dataset.to; if(!m) return; if(to==="ganho") return confirmDlg("Marcar "+menteeName(m)+" como ganho?", "A oportunidade sai do funil em aberto e o mentorado passa para o status Ativo.", "Marcar como ganho", function(){ saveFunil(m, {etapa:"ganho", ganhoEm:todayISO()}).then(function(){ toast("Oportunidade ganha!"); }); }); return saveFunil(m, {etapa:to}).then(function(){ toast(menteeName(m)+" · "+FUNIL_N[to]); }); }
+  if(a==="fuNovo"){ if(m) followDlg(m); return; }
+  if(a==="oppSalvar"){
+    if(!m) return; var b = $("oEt").querySelector("button.on"), val = $("oVal").value.trim();
+    var patch = {etapa: b ? b.dataset.v : "lead", valor: val ? money2(parseBR(val)) : "", origem:$("oOri").value.trim(), proxFollow:$("oProx").value, proxAcao:$("oAcao").value.trim(), motivo:$("oMot").value.trim(), notas:$("oNot").value};
+    if(patch.etapa==="ganho" && funilOf(m) && funilOf(m).etapa!=="ganho") patch.ganhoEm = todayISO();
+    return saveFunil(m, patch).then(function(){ toast(patch.etapa==="ganho" && m.status==="prospect" ? "Oportunidade ganha · mentorado agora está Ativo" : "Oportunidade salva"); });
+  }
+  if(a==="fuAdd"){
+    if(!m) return; var nota = $("fuNota").value.trim(); if(!nota){ $("fuNota").focus(); return; }
+    var f = funilOf(m)||{etapa:"lead"}, x = {id:uid(), data:$("fuData").value||todayISO(), canal:$("fuCanal").value, nota:nota};
+    return saveFunil(m, {etapa:f.etapa||"lead", followups:(f.followups||[]).concat([x]), ultimoContato:x.data}).then(function(){ toast("Follow-up registrado"); });
+  }
+  if(a==="fuDel"){ if(!m) return; var f2 = funilOf(m)||{}; var id = el.dataset.fu; return confirmDlg("Excluir este follow-up?", "O registro do contato será removido do histórico.", "Excluir", function(){ saveFunil(m, {followups:(f2.followups||[]).filter(function(z){ return z.id!==id; })}); }); }
+  if(a==="propNova"){ if(m) openProposta(null, m.id); return; }
+  if(a==="propAbrir"){ openProposta(el.dataset.p); return; }
+  if(a==="propPdf"){ var p = D.propostas.filter(function(z){ return z.id===el.dataset.p; })[0]; if(p) propPreview(p); return; }
+}
+
+/* ---------- Proposta: editor ---------- */
+var PROP_MODULOS = [
+  "Como estabelecer um modelo de negócios vencedor, sob a perspectiva de margem, escala e recorrência (Canvas FWG)",
+  "Implantar uma cultura de avaliação de pessoas para captar, reter e desenvolver pessoas (Método CCR - Cultura, Comportamento e Resultados) - Modelos de Remunerações Fixa e Variáveis",
+  "Maximização e gestão do tempo, adotando as melhores agendas e formatos (matriz de priorização)",
+  "Alocar de maneira eficiente e inteligente os recursos financeiros",
+  "Aumentar faturamento e rentabilidade, compreender e implantar uma matriz de crescimento econômico (LTV/CAC)",
+  "Construir um negócio baseado em valor & equity",
+  "Elaborar um planejamento estratégico completo"];
+var PROP_BONUS = ["Como capturar investimento para meu projeto?", "Governança & Conselho Empresarial - Transparência no seu negócio"];
+var PROP_MATERIAIS = ["Excel Planilhas / Simuladores", "Mapas Mentais", "Canvas de Negócios FWG", "PDFs (Playbooks)"];
+var PROP_BIO = "Empresário, investidor e especialista em gestão, Murilo Specchio é fundador e CEO da Honest Market Brasil, uma das maiores redes de microfranquias do país, com mais de 500 lojas e uma visão ousada: alcançar 5.000 unidades até 2030.\n\nCom mais de 15 anos de experiência empreendendo em diferentes segmentos, Murilo acredita que o crescimento de um país está diretamente ligado à força de seus negócios. Por isso, dedica-se a mentorar, educar e impulsionar empreendedores e líderes, ajudando a construir um Brasil mais próspero e empreendedor para as próximas gerações.";
+var PROP_PASSOS = ["Aprovação da proposta e assinatura do contrato", "Agendamento do encontro de kick-off", "Aplicação completa do Canvas FWG e definição das prioridades", "Início dos encontros mensais e acesso à plataforma de conteúdo"];
+function propNumero(){
+  var y = new Date().getFullYear(), n = D.propostas.filter(function(p){ return (p.numero||"").indexOf("FWG-"+y+"-")===0; }).map(function(p){ return parseInt(p.numero.split("-")[2],10)||0; });
+  return "FWG-"+y+"-"+String((n.length?Math.max.apply(null,n):0)+1).padStart(3,"0");
+}
+function propDefault(m){
+  var ult = propsOf(m.id)[0];
+  return {mid:m.id, numero:propNumero(), data:todayISO(), validade:"15", status:"rascunho",
+    contato: [m.nome].concat(m.participantes||[]).filter(Boolean).join(", "),
+    programa: ult ? JSON.parse(JSON.stringify(ult.programa)) : {nome:"Programa de Mentoria Framework da Gestão", meses:"6", encontros:"6", hEncontro:"3", conselho:"3", hConselho:"3", aulas:"7", hAula:"1,5", bonus:"2", hBonus:"1,5", acesso:"12", whatsapp:true},
+    modulos: ult ? ult.modulos.slice() : PROP_MODULOS.slice(), bonusL: ult ? ult.bonusL.slice() : PROP_BONUS.slice(), materiais: ult ? ult.materiais.slice() : PROP_MATERIAIS.slice(),
+    diag:true, entregaveis:null, investimento: ult ? Object.assign({}, ult.investimento) : {avista:"100.000,00", parcelado:"120.000,00", parcelas:"12", forma:"no cartão", obs:""},
+    passos: PROP_PASSOS.slice(), criadoEm:new Date().toISOString()};
+}
+function propIntro(p){
+  var g = p.programa||{}, partes = [];
+  partes.push("Nosso programa tem duração de "+(g.meses||6)+" meses, com "+(g.encontros||6)+" encontro"+(+g.encontros===1?"":"s")+" individua"+(+g.encontros===1?"l":"is")+" mensa"+(+g.encontros===1?"l":"is")+" ("+(g.hEncontro||3)+"h) para endereçar os desafios do empreendedor");
+  if(+g.conselho) partes.push((g.conselho)+" participaç"+(+g.conselho===1?"ão":"ões")+" em reuniões de conselho ("+(g.hConselho||3)+"h)");
+  var t = partes.join(", ")+" e traremos os principais temas da metodologia Framework da Gestão";
+  var extra = [];
+  if(+g.aulas) extra.push(g.aulas+" aulas gravadas que complementam nosso programa");
+  if(+g.bonus) extra.push(g.bonus+" aulas estratégicas de bônus");
+  if(g.whatsapp) extra.push("nosso grupo fechado no WhatsApp");
+  if(extra.length) t += ", além de "+(extra.length>1 ? extra.slice(0,-1).join(", ")+" e "+extra[extra.length-1] : extra[0]);
+  return t+".";
+}
+/* sugestões de entregáveis a partir do assessment do Canvas FWG */
+function canvasSugestoes(state, resumo){
+  var a = (state && state.assess) || {}, areaP = {}; ((resumo && resumo.areas)||[]).forEach(function(x){ areaP[x.t] = x.p; });
+  var out = [];
+  ASSESS_ITEMS.forEach(function(th){ th.i.forEach(function(x){ var v = a[x[0]]; if(v==="nao" || v==="parcial") out.push({k:x[0], area:th.t, t:(v==="nao"?"Implantar ":"Aprimorar ")+x[1], v:v, p:areaP[th.t]!=null?areaP[th.t]:50}); }); });
+  out.sort(function(x,y){ return x.p-y.p || (x.v==="nao"?0:1)-(y.v==="nao"?0:1); });
+  // pré-seleção: 3 áreas de menor maturidade, até 3 itens cada (prioriza "não tem")
+  var areas = []; out.forEach(function(o){ if(areas.indexOf(o.area)<0) areas.push(o.area); });
+  var top = areas.slice(0,3), cnt = {};
+  out.forEach(function(o){ cnt[o.area] = cnt[o.area]||0; o.sel = top.indexOf(o.area)>-1 && cnt[o.area]<3; if(o.sel) cnt[o.area]++; });
+  return out;
+}
+var propDraft = null;
+function openProposta(pid, mid){
+  var p = pid ? D.propostas.filter(function(z){ return z.id===pid; })[0] : null;
+  var m = mentee(p ? p.mid : mid); if(!m) return;
+  var isNew = !p; p = p ? JSON.parse(JSON.stringify(p)) : propDefault(m); if(isNew) p.id = uid();
+  propDraft = {p:p, isNew:isNew, sug:null};
+  getDoc("canvas", m.id).then(function(doc){ return doc; }, function(){ return null; }).then(function(doc){
+    var sug = canvasSugestoes(doc && doc.state, m.resumo); propDraft.sug = sug;
+    if(!p.entregaveis) p.entregaveis = sug.filter(function(o){ return o.sel; }).map(function(o){ return {t:o.t, area:o.area, k:o.k}; });
+    renderPropEditor(m);
+  });
+}
+function lines(id){ return $(id).value.split("\n").map(function(s){ return s.replace(/^\s*[-•\d.)]+\s*/,"").trim(); }).filter(Boolean); }
+function renderPropEditor(m){
+  var p = propDraft.p, g = p.programa, inv = p.investimento, sug = propDraft.sug||[], hasDiag = m.resumo && m.resumo.maturidade!=null;
+  var num = function(id, lbl, v){ return '<div><label class="lbl" for="'+id+'">'+lbl+'</label><input class="inp" id="'+id+'" value="'+esc(v||"")+'" inputmode="decimal"></div>'; };
+  var selK = {}; (p.entregaveis||[]).forEach(function(e){ if(e.k) selK[e.k] = true; });
+  var byArea = {}; sug.forEach(function(o){ (byArea[o.area] = byArea[o.area]||[]).push(o); });
+  var manual = (p.entregaveis||[]).filter(function(e){ return !e.k; }).map(function(e){ return e.t; }).join("\n");
+  openModal('<div class="dlg-h"><h3>'+(propDraft.isNew?"Nova proposta":"Proposta "+esc(p.numero))+' · '+esc(menteeName(m))+'</h3><p>Os dados da empresa e o diagnóstico do Canvas FWG entram automaticamente. Ajuste o que quiser e gere o PDF.</p></div><div class="dlg-b propedit">'+
+    '<div class="psec"><h4>Proposta</h4><div class="grid4">'+field("pNum","Número",p.numero)+field("pData","Emissão",p.data,{extra:'type="date"'})+num("pVal","Validade (dias)",p.validade)+
+      '<div><label class="lbl" for="pSt">Status</label><select class="inp" id="pSt">'+Object.keys(PROP_ST).map(function(k){ return '<option value="'+k+'"'+(p.status===k?' selected':'')+'>'+PROP_ST[k]+'</option>'; }).join("")+'</select></div></div>'+
+      '<div class="grid2" style="margin-top:10px">'+field("pEmp","Empresa",menteeName(m),{extra:'disabled'})+field("pCont","Aos cuidados de",p.contato)+'</div></div>'+
+    '<div class="psec"><h4>Investimento</h4><div class="grid4">'+num("pAv","À vista (R$)",inv.avista)+num("pPa","Parcelado · total (R$)",inv.parcelado)+num("pNp","Nº de parcelas",inv.parcelas)+field("pFo","Forma do parcelado",inv.forma)+'</div>'+
+      '<div style="margin-top:10px"><label class="lbl" for="pObs">Condições (opcional)</label><input class="inp" id="pObs" value="'+esc(inv.obs||"")+'" placeholder="Ex.: à vista via PIX ou boleto; parcelado no cartão sem juros"></div></div>'+
+    '<div class="psec"><h4>Formato do programa</h4>'+field("pNome","Nome do programa",g.nome,{full:true})+
+      '<div class="grid4" style="margin-top:10px">'+num("gMes","Duração (meses)",g.meses)+num("gEnc","Encontros individuais",g.encontros)+num("gHE","Horas por encontro",g.hEncontro)+num("gAc","Acesso à plataforma (meses)",g.acesso)+
+      num("gCon","Reuniões de conselho",g.conselho)+num("gHC","Horas por reunião",g.hConselho)+num("gAu","Aulas gravadas",g.aulas)+num("gHA","Horas por aula",g.hAula)+
+      num("gBo","Aulas bônus",g.bonus)+num("gHB","Horas por aula bônus",g.hBonus)+'<div class="full" style="grid-column:span 2"><span class="lbl">Grupo no WhatsApp</span><label class="gct" style="padding:10px 0"><input type="checkbox" id="gWa"'+(g.whatsapp?' checked':'')+'> Incluir grupo fechado no WhatsApp</label></div></div></div>'+
+    '<div class="psec"><h4>Escopo · entregáveis a partir do Canvas FWG</h4>'+
+      (hasDiag ? '<label class="gct" style="padding:0 0 10px"><input type="checkbox" id="pDiag"'+(p.diag!==false?' checked':'')+'> Incluir a página de diagnóstico (maturidade por área e números da empresa)</label>' : '<p class="sub" style="margin:0 0 10px">Esta empresa ainda não tem Canvas FWG aplicado: a proposta sai sem diagnóstico. Você pode escrever os entregáveis abaixo.</p>')+
+      (sug.length ? '<p class="sub" style="margin:0 0 8px">Pontos do assessment marcados como <b>Não tem</b> ou <b>Parcial</b>, das áreas de menor maturidade para as maiores. Marque os que entram como entregáveis.</p><div class="sugbox">'+Object.keys(byArea).map(function(ar){ return '<div class="suga"><b>'+esc(ar)+'</b>'+byArea[ar].map(function(o){ return '<label><input type="checkbox" class="pSug" data-k="'+esc(o.k)+'"'+(selK[o.k]?' checked':'')+'> '+esc(o.t)+(o.v==="parcial"?' <small>parcial</small>':'')+'</label>'; }).join("")+'</div>'; }).join("")+'</div>' : '')+
+      '<div style="margin-top:10px"><label class="lbl" for="pMan">Outros entregáveis (um por linha)</label><textarea class="inp" id="pMan" style="min-height:70px" placeholder="Ex.: Orçamento 2027 aprovado pelo conselho">'+esc(manual)+'</textarea></div></div>'+
+    '<div class="psec"><h4>Conteúdo do programa</h4><label class="lbl" for="pMod">Temas (um por linha)</label><textarea class="inp" id="pMod" style="min-height:150px">'+esc(p.modulos.join("\n"))+'</textarea>'+
+      '<div class="grid2" style="margin-top:10px"><div><label class="lbl" for="pBon">Bônus (um por linha)</label><textarea class="inp" id="pBon" style="min-height:70px">'+esc(p.bonusL.join("\n"))+'</textarea></div><div><label class="lbl" for="pMat">Materiais complementares</label><textarea class="inp" id="pMat" style="min-height:70px">'+esc(p.materiais.join("\n"))+'</textarea></div></div>'+
+      '<div style="margin-top:10px"><label class="lbl" for="pPas">Próximos passos (um por linha)</label><textarea class="inp" id="pPas" style="min-height:80px">'+esc((p.passos||PROP_PASSOS).join("\n"))+'</textarea></div></div>'+
+    '</div><div class="dlg-f">'+(propDraft.isNew?'<span></span>':'<button class="btn danger" id="pDel" type="button">Excluir</button>')+'<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="cNo" type="button">Cancelar</button><button class="btn" id="pSave" type="button">Salvar</button><button class="btn pri" id="pPdf" type="button">Salvar e gerar PDF</button></div></div>', function(){
+      $("cNo").onclick = closeModal;
+      ["pAv","pPa"].forEach(function(id){ var i = $(id); i.onblur = function(){ if(i.value.trim()) i.value = money2(parseBR(i.value)); }; });
+      $("pSave").onclick = function(){ savePropFromForm(m).then(function(){ closeModal(); toast("Proposta salva"); }); };
+      $("pPdf").onclick = function(){ savePropFromForm(m).then(function(p2){ closeModal(); propPreview(p2); }); };
+      if($("pDel")) $("pDel").onclick = function(){ var id = propDraft.p.id; closeModal(); confirmDlg("Excluir a proposta "+propDraft.p.numero+"?", "A proposta será removida do histórico desta oportunidade.", "Excluir", function(){ remove("propostas", id).then(function(){ toast("Proposta excluída"); }); }); };
+    }, "wide");
+}
+function savePropFromForm(m){
+  var p = propDraft.p, prevSt = (D.propostas.filter(function(z){ return z.id===p.id; })[0]||{}).status;
+  var v = function(id){ return $(id).value.trim(); };
+  p.numero = v("pNum") || p.numero; p.data = v("pData") || todayISO(); p.validade = v("pVal") || "15"; p.status = $("pSt").value; p.contato = v("pCont");
+  p.investimento = {avista: v("pAv") ? money2(parseBR(v("pAv"))) : "", parcelado: v("pPa") ? money2(parseBR(v("pPa"))) : "", parcelas: v("pNp"), forma: v("pFo"), obs: v("pObs")};
+  p.programa = {nome:v("pNome"), meses:v("gMes"), encontros:v("gEnc"), hEncontro:v("gHE"), acesso:v("gAc"), conselho:v("gCon"), hConselho:v("gHC"), aulas:v("gAu"), hAula:v("gHA"), bonus:v("gBo"), hBonus:v("gHB"), whatsapp:$("gWa").checked};
+  p.diag = $("pDiag") ? $("pDiag").checked : false;
+  var sug = propDraft.sug||[], ks = {}; document.querySelectorAll(".pSug").forEach(function(c){ if(c.checked) ks[c.dataset.k] = true; });
+  p.entregaveis = sug.filter(function(o){ return ks[o.k]; }).map(function(o){ return {t:o.t, area:o.area, k:o.k}; }).concat(lines("pMan").map(function(t){ return {t:t, area:""}; }));
+  p.modulos = lines("pMod"); p.bonusL = lines("pBon"); p.materiais = lines("pMat"); p.passos = lines("pPas");
+  if(p.status==="enviada" && !p.enviadaEm) p.enviadaEm = todayISO();
+  p.resumo = m.resumo || null; p.atualizadoEm = new Date().toISOString();
+  var doc = strip(p);
+  return store("propostas", p.id, doc).then(function(){
+    var f = funilOf(m)||{}, patch = null;
+    if(p.status==="enviada" && prevSt!=="enviada" && (!f.etapa || f.etapa==="lead" || f.etapa==="diagnostico")) patch = {etapa:"proposta"};
+    if(p.status==="aceita" && prevSt!=="aceita" && f.etapa!=="ganho") patch = {etapa:"ganho", ganhoEm:todayISO()};
+    return (patch ? saveFunil(mentee(m.id)||m, patch).then(function(){ toast(patch.etapa==="ganho" ? "Proposta aceita · oportunidade marcada como ganha" : "Proposta enviada · oportunidade em “Proposta enviada”"); }) : Promise.resolve()).then(function(){ return doc; });
+  });
+}
+
+/* ---------- Proposta: páginas e PDF ---------- */
+var PP_LOGO = '<svg viewBox="0 0 217 244" aria-hidden="true"><polygon fill="#BA9239" points="102,0 102,53 43,87 43,115 0,115 0,60"/><polygon fill="#002F38" points="115,0 217,60 217,115 174,115 174,87 115,53"/><polygon fill="#002F38" points="0,128 43,128 43,157 102,191 102,244 0,184"/><polygon fill="#002F38" points="120,128 217,128 217,184 115,244 115,191 174,160"/></svg>';
+function ppHead(){ return '<div class="pp-hd">'+PP_LOGO+'<span>framework<br>da <b>gestão</b></span></div>'; }
+function ppFoot(n){ return '<div class="pp-ft"><i></i><b>'+String(n).padStart(2,"0")+'</b></div>'; }
+function propPages(p, m){
+  var g = p.programa||{}, inv = p.investimento||{}, r = p.diag!==false ? (m.resumo||p.resumo) : null, pages = [], n = 0;
+  var emp = esc(menteeName(m)), dataExt = (function(){ var d = parseISO(p.data); return d ? d.getDate()+" de "+["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"][d.getMonth()]+" de "+d.getFullYear() : ""; })();
+  // 1. capa
+  pages.push('<div class="pp pp-capa"><img class="bg" src="proposta/capa.jpg" alt=""><div class="cap-top">PROPOSTA · MENTORIA</div><div class="cap-mid"><small>Preparada para</small><h1>'+emp+'</h1>'+(p.contato?'<p>A/C '+esc(p.contato)+'</p>':'')+'<span>'+esc(p.numero||"")+' · '+esc(dataExt)+'</span></div></div>');
+  // 2. programa + mentor
+  n++; pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t" style="margin-top:70px">'+esc(g.nome||"Programa de Mentoria")+'</h2><div class="pp-bio"><img src="proposta/murilo.jpg" alt=""><div><h3>Murilo Specchio</h3>'+PROP_BIO.split("\n\n").map(function(t){ return '<p>'+esc(t)+'</p>'; }).join("")+'</div></div>'+
+    '<div class="pp-para"><p>Esta proposta foi preparada para <b>'+emp+'</b>'+(m.segmento?', do segmento de '+esc(m.segmento):'')+'. Ela reúne o formato do programa, o escopo de trabalho'+(r?' construído a partir do diagnóstico do Canvas FWG':'')+' e as condições de investimento.</p></div>'+ppFoot(n)+'</div>');
+  // 3. diagnóstico
+  if(r && r.maturidade!=null){
+    n++; var ar = (r.areas||[]).slice();
+    pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t">Diagnóstico · Canvas FWG</h2><div class="pp-pill">Ponto de partida de '+emp+'</div>'+
+      '<p class="pp-lead">Aplicamos o Canvas FWG e o assessment de profissionalização'+(r.respondidos?' ('+r.respondidos+' de '+r.totalItens+' itens avaliados)':'')+' para mapear onde a empresa está hoje e onde a mentoria vai gerar mais resultado.</p>'+
+      '<div class="pp-kpis"><div class="dk"><b>'+fmtN(r.maturidade)+'%</b><span>Maturidade de gestão</span></div>'+(r.fatMes?'<div><b>'+esc(brl(r.fatMes))+'</b><span>Faturamento mensal</span></div>':'')+(r.headcount?'<div><b>'+r.headcount+'</b><span>Pessoas</span></div>':'')+(r.lucroPct!=null && r.lucroPct!==""?'<div><b>'+fmtN(r.lucroPct)+'%</b><span>Lucro líquido</span></div>':'')+'</div>'+
+      '<div class="pp-box"><h4>Maturidade por área</h4>'+ar.map(function(a){ return '<div class="pp-bar"><span>'+esc(a.t)+'</span><i><em style="width:'+Math.max(1.5,a.p)+'%;background:'+(a.p<34?'#a3402f':a.p<67?'#BA9239':'#1d6b4b')+'"></em></i><b>'+fmtN(a.p)+'%</b></div>'; }).join("")+'</div>'+
+      '<p class="pp-note">Escala: 0% = nenhuma prática implantada · 100% = área profissionalizada. Itens “Parcial” contam metade.</p>'+ppFoot(n)+'</div>');
+  }
+  // 4. estrutura do programa
+  n++; pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t">Estrutura do Programa</h2><div class="pp-pill">O que você vai aprender e como funciona?</div><p class="pp-lead"><b>'+esc(propIntro(p))+'</b></p>'+
+    '<div class="pp-grey"><ol>'+p.modulos.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ol></div>'+
+    (p.bonusL.length?'<div class="pp-dark"><h4>Bônus</h4><ol>'+p.bonusL.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ol></div>':'')+ppFoot(n)+'</div>');
+  // 5. escopo e entregáveis (paginado)
+  var ents = p.entregaveis||[];
+  if(ents.length){
+    var groups = [], idx = {}; ents.forEach(function(e){ var k = e.area||"Entregáveis definidos com a empresa"; if(idx[k]==null){ idx[k] = groups.length; groups.push({t:k, i:[]}); } groups[idx[k]].i.push(e.t); });
+    var chunks = [[]], rows = 0; groups.forEach(function(gr){ var need = gr.i.length + 1.6; if(rows + need > 21 && chunks[chunks.length-1].length){ chunks.push([]); rows = 0; } chunks[chunks.length-1].push(gr); rows += need; });
+    var k = 0;
+    chunks.forEach(function(ch, ci){ n++; pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t">Escopo e entregáveis'+(chunks.length>1?' <small>('+(ci+1)+'/'+chunks.length+')</small>':'')+'</h2>'+(ci===0?'<div class="pp-pill">Onde a mentoria vai atuar em '+emp+'</div><p class="pp-lead">'+(r?'Prioridades definidas a partir dos pontos do assessment que a empresa ainda não tem ou tem parcialmente, começando pelas áreas de menor maturidade.':'Prioridades definidas com a empresa para o período do programa.')+'</p>':'')+
+      ch.map(function(gr){ return '<div class="pp-ent"><h4>'+esc(gr.t)+'</h4><ul>'+gr.i.map(function(t){ k++; return '<li><span>'+k+'</span>'+esc(t)+'</li>'; }).join("")+'</ul></div>'; }).join("")+ppFoot(n)+'</div>'); });
+  }
+  // 6. cronograma / formato
+  var lin = [["Mentoria individual mensal", g.encontros, g.hEncontro, "#2e8b57"], ["Participação em reuniões de conselho", g.conselho, g.hConselho, "#7a8a90"], ["Aula gravada", g.aulas, g.hAula, "#7b2cbf"], ["Aula bônus gravada", g.bonus, g.hBonus, "#b85c1e"]].filter(function(l){ return +parseBR(l[1]||"0")>0; });
+  var totQ = 0, totH = 0; lin.forEach(function(l){ var q = parseBR(l[1]||"0"), hh = parseBR(l[2]||"0"); totQ += q; totH += q*hh; });
+  n++; pages.push('<div class="pp">'+ppHead()+'<h2 class="pp-t">Cronograma e formato</h2><table class="pp-tab"><thead><tr><th>Atividade</th><th>Qtde</th><th>Horas</th><th>Total de horas</th></tr></thead><tbody>'+lin.map(function(l){ var q = parseBR(l[1]||"0"), hh = parseBR(l[2]||"0"); return '<tr><td><i style="background:'+l[3]+'"></i>'+esc(l[0])+'</td><td>'+fmtN(q)+'</td><td>'+fmtN(hh)+'</td><td>'+fmtN(q*hh)+'</td></tr>'; }).join("")+'<tr class="tt"><td>Total geral</td><td>'+fmtN(totQ)+'</td><td></td><td>'+fmtN(totH)+'</td></tr></tbody></table>'+
+    '<div class="pp-grey" style="margin-top:26px"><p>O mentorado terá <b>'+esc(g.encontros||6)+' encontros individuais em '+esc(g.meses||6)+' meses</b>'+(+g.conselho?', além de <b>'+esc(g.conselho)+' participações em reuniões de conselho</b>':'')+(+g.acesso?', e acesso ao conteúdo hospedado em plataforma online durante <b>'+esc(g.acesso)+' meses</b>':'')+'.</p>'+
+    (p.materiais.length?'<p><b>Importante:</b> além das aulas ao vivo e gravadas, dispomos de material complementar:</p><ul>'+p.materiais.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ul>':'')+'</div>'+
+    '<p class="pp-note">As datas dos encontros são definidas em conjunto no kick-off e acompanhadas pela Plataforma de Mentorias FWG.</p>'+ppFoot(n)+'</div>');
+  // 7. investimento
+  var parc = parseBR(inv.parcelado||""), np = parseInt(inv.parcelas,10)||0;
+  n++; pages.push('<div class="pp pp-inv">'+ppHead()+'<h2 class="pp-t" style="margin-top:70px">Investimento</h2><div class="pp-prices">'+
+    (inv.avista?'<div><b>R$ '+esc(inv.avista)+'</b><span>à vista</span></div>':'')+(inv.avista && inv.parcelado?'<em>ou</em>':'')+
+    (inv.parcelado?'<div><b>R$ '+esc(inv.parcelado)+'</b><span>parcelado'+(inv.forma?' '+esc(inv.forma):'')+(np?'<br>('+np+'x'+(parc?' de R$ '+esc(money2(parc/np)):'')+')':'')+'</span></div>':'')+'</div>'+
+    (inv.obs?'<p class="pp-cond">'+esc(inv.obs)+'</p>':'')+
+    '<div class="pp-steps"><h4>Próximos passos</h4><ol>'+(p.passos||[]).map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")+'</ol><p>Proposta '+esc(p.numero||"")+' · emitida em '+esc(brDate(p.data))+' · válida por '+esc((parseInt(p.validade,10)||15)+' dias')+'.</p></div>'+
+    '<img class="pp-pe" src="proposta/murilo-pe.webp" alt="">'+ppFoot(n)+'</div>');
+  // 8. contracapa
+  pages.push('<div class="pp pp-capa"><img class="bg" src="proposta/contracapa.jpg" alt=""></div>');
+  return pages;
+}
+var PP_CSS = '.pp h1,.pp h2,.pp h3,.pp h4{letter-spacing:normal;font-family:inherit}.ppstage{position:fixed;left:-12000px;top:0;width:794px;z-index:-1}'+
+'.pp{width:794px;height:1123px;position:relative;overflow:hidden;background:#fff;color:#10181E;font-family:"Albert Sans",Helvetica,Arial,sans-serif;box-sizing:border-box;padding:0 64px}'+
+'.pp *{box-sizing:border-box}.pp-capa{padding:0;background:#002F38}.pp-capa .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}'+
+'.cap-top{position:absolute;top:96px;left:0;right:0;text-align:center;color:#BA9239;font-weight:800;letter-spacing:4px;font-size:22px}'+
+'.cap-mid{position:absolute;left:60px;right:60px;top:652px;text-align:center;color:#F3F9FE}.cap-mid small{display:block;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#BA9239;font-weight:700}.cap-mid h1{font-size:36px;margin:6px 0 4px;font-weight:800;line-height:1.1;color:#fff;letter-spacing:0}.cap-mid p{margin:0 0 8px;font-size:15px;color:#F3F9FE;opacity:.9}.cap-mid span{font-size:12.5px;color:#F3F9FE;opacity:.7}'+
+'.pp-hd{position:absolute;top:30px;left:40px;display:flex;gap:8px;align-items:center;font-size:11.5px;line-height:1;color:#002F38}.pp-hd svg{width:24px;height:27px}.pp-hd b{font-weight:800}'+
+'.pp-ft{position:absolute;left:40px;right:40px;bottom:34px;display:flex;align-items:center;gap:0}.pp-ft i{flex:1;height:1.5px;background:#BA9239}.pp-ft b{background:#002F38;color:#F3F9FE;font-size:11px;padding:3px 10px;font-weight:700}'+
+'.pp-t{text-align:center;color:#002F38;font-size:30px;font-weight:700;margin:96px 0 10px}.pp-t small{font-size:16px;color:#5d7178}'+
+'.pp-pill{display:table;margin:0 auto 16px;background:#BA9239;color:#002F38;font-weight:600;font-size:17px;padding:7px 22px;border-radius:999px;text-align:center}'+
+'.pp-lead{font-size:14px;line-height:1.55;margin:0 0 18px;text-align:justify}'+
+'.pp-bio{display:grid;grid-template-columns:1fr 1fr;margin:40px -64px 0;height:440px}.pp-bio img{width:100%;height:440px;object-fit:cover}.pp-bio>div{background:#002F38;color:#F3F9FE;padding:30px 30px;font-size:13.2px;line-height:1.5}.pp-bio h3{color:#BA9239;font-size:21px;margin:0 0 12px;font-weight:600}.pp-bio p{margin:0 0 10px}'+
+'.pp-para{margin-top:40px;font-size:15px;line-height:1.6;color:#10181E}'+
+'.pp-grey{background:#eef1f3;border-radius:16px;padding:22px 30px;font-size:14px;line-height:1.5}.pp-grey ol{margin:0;padding-left:22px}.pp-grey li{margin:0 0 12px}.pp-grey p{margin:0 0 10px}.pp-grey ul{margin:0;padding-left:20px}'+
+'.pp-dark{background:#002F38;color:#F3F9FE;border-radius:16px;padding:18px 30px;margin-top:18px;font-size:14px}.pp-dark h4{color:#BA9239;text-align:center;margin:0 0 10px;font-size:20px}.pp-dark ol{margin:0;padding-left:22px}.pp-dark li{margin:0 0 6px}'+
+'.pp-kpis{display:flex;gap:12px;margin:0 0 18px}.pp-kpis>div{flex:1;border:1.5px solid #d5e2e8;border-radius:14px;padding:14px 16px}.pp-kpis b{display:block;font-size:21px;color:#002F38;white-space:nowrap}.pp-kpis span{font-size:12px;color:#5d7178}.pp-kpis .dk{background:#002F38;border-color:#002F38}.pp-kpis .dk b{color:#BA9239}.pp-kpis .dk span{color:#F3F9FE}'+
+'.pp-box{border:1.5px solid #d5e2e8;border-radius:16px;padding:20px 24px}.pp-box h4{margin:0 0 14px;color:#002F38;font-size:16px}'+
+'.pp-bar{display:grid;grid-template-columns:230px 1fr 52px;gap:12px;align-items:center;margin:0 0 12px;font-size:13.5px}.pp-bar i{height:12px;background:#eef1f3;border-radius:99px;overflow:hidden;display:block}.pp-bar em{display:block;height:100%;border-radius:99px}.pp-bar b{text-align:right;color:#002F38}'+
+'.pp-note{font-size:11.5px;color:#5d7178;margin-top:12px}'+
+'.pp-ent{margin:0 0 14px}.pp-ent h4{margin:0 0 8px;color:#002F38;font-size:15px;border-bottom:1.5px solid #BA9239;padding-bottom:5px}.pp-ent ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.pp-ent li{display:flex;gap:10px;align-items:baseline;font-size:13.5px}.pp-ent li span{flex:none;width:22px;height:22px;border-radius:50%;background:#002F38;color:#F3F9FE;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}'+
+'.pp-tab{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}.pp-tab th{background:#002F38;color:#F3F9FE;padding:10px;text-align:center}.pp-tab th:first-child{text-align:left}.pp-tab td{padding:10px;border-bottom:1px solid #d5e2e8;text-align:center}.pp-tab td:first-child{text-align:left}.pp-tab td i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:9px}.pp-tab tr.tt td{background:#10181E;color:#fff;font-weight:700}'+
+'.pp-prices{display:flex;align-items:center;justify-content:center;gap:24px;margin:36px 0 18px}.pp-prices>div{text-align:center}.pp-prices b{display:block;background:#BA9239;color:#F3F9FE;font-size:22px;padding:9px 26px;border-radius:999px;margin-bottom:8px}.pp-prices span{font-weight:700;color:#002F38;font-size:15px}.pp-prices em{font-style:normal;font-weight:700;color:#002F38;font-size:20px}'+
+'.pp-cond{text-align:center;font-size:13px;color:#5d7178;margin:0 0 10px}'+
+'.pp-steps{position:absolute;left:64px;top:520px;width:380px;background:#eef1f3;border-radius:16px;padding:22px 26px;font-size:13.5px;line-height:1.5}.pp-steps h4{margin:0 0 10px;color:#002F38;font-size:17px}.pp-steps ol{margin:0 0 12px;padding-left:20px}.pp-steps li{margin:0 0 6px}.pp-steps p{margin:0;font-size:11.5px;color:#5d7178}'+
+'.pp-pe{position:absolute;right:10px;bottom:70px;height:560px}';
+var propLibsP = null;
+function propLibs(){ if(!propLibsP) propLibsP = Promise.all(["vendor/html-to-image.js","vendor/pdf-lib.min.js"].map(function(src){ return new Promise(function(res, rej){ if(src.indexOf("html-to-image")>-1 && window.htmlToImage) return res(); if(src.indexOf("pdf-lib")>-1 && window.PDFLib) return res(); var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = function(){ rej(new Error("falha ao carregar "+src)); }; document.head.appendChild(s); }); })).catch(function(e){ propLibsP = null; throw e; }); return propLibsP; }
+function propRender(p){
+  var m = mentee(p.mid); if(!m) return Promise.reject(new Error("mentorado não encontrado"));
+  return propLibs().then(function(){
+    if(!$("ppCss")){ var st = document.createElement("style"); st.id = "ppCss"; st.textContent = PP_CSS; document.head.appendChild(st); }
+    var stage = document.createElement("div"); stage.className = "ppstage"; stage.innerHTML = propPages(p, m).join(""); document.body.appendChild(stage);
+    var imgs = Array.prototype.slice.call(stage.querySelectorAll("img"));
+    return Promise.all(imgs.map(function(im){ return im.complete ? Promise.resolve() : new Promise(function(r){ im.onload = r; im.onerror = r; }); })).then(function(){
+      var nodes = Array.prototype.slice.call(stage.querySelectorAll(".pp")), shots = [];
+      var step = function(i){ if(i>=nodes.length) return Promise.resolve(); return window.htmlToImage.toCanvas(nodes[i], {pixelRatio:2, backgroundColor:"#ffffff", skipFonts:true, width:794, height:1123}).then(function(c){ shots.push(c); return step(i+1); }); };
+      return step(0).then(function(){ stage.remove(); return shots; }, function(e){ stage.remove(); throw e; });
+    });
+  }).then(function(shots){
+    var PL = window.PDFLib;
+    return PL.PDFDocument.create().then(function(pdf){
+      var urls = shots.map(function(c){ return c.toDataURL("image/jpeg", 0.88); });
+      return urls.reduce(function(pr, u){ return pr.then(function(){ return pdf.embedJpg(u).then(function(img){ var pg = pdf.addPage([595.28, 841.89]); pg.drawImage(img, {x:0, y:0, width:595.28, height:841.89}); }); }); }, Promise.resolve()).then(function(){
+        pdf.setTitle("Proposta "+(p.numero||"")+" - "+menteeName(m)); pdf.setAuthor("Framework da Gestão"); pdf.setCreator("Plataforma de Mentorias FWG");
+        return pdf.save();
+      }).then(function(bytes){ return {bytes:bytes, previews:urls}; });
+    });
+  });
+}
+function propPreview(p){
+  var m = mentee(p.mid);
+  openModal('<div class="dlg-h"><h3>Proposta '+esc(p.numero||"")+' · '+esc(menteeName(m))+'</h3><p id="ppMsg">Montando as páginas da proposta…</p></div><div class="dlg-b"><div class="ppview" id="ppView"><div class="ppload"></div></div></div><div class="dlg-f"><button class="btn" id="cNo" type="button">Fechar</button><div style="display:flex;gap:8px"><button class="btn" id="ppEdit" type="button">Editar proposta</button><button class="btn pri" id="ppDl" type="button" disabled>Baixar PDF</button></div></div>', function(){
+    $("cNo").onclick = closeModal;
+    $("ppEdit").onclick = function(){ closeModal(); openProposta(p.id); };
+    propRender(p).then(function(out){
+      if(!$("ppView")) return;
+      $("ppView").innerHTML = out.previews.map(function(u, i){ return '<img src="'+u+'" alt="Página '+(i+1)+'">'; }).join("");
+      $("ppMsg").textContent = out.previews.length+" páginas · confira e baixe o PDF.";
+      var name = ("Proposta "+(p.numero||"")+" - "+menteeName(m)).replace(/[\\\/:*?"<>|]+/g,"-").replace(/\s+/g," ").trim()+".pdf";
+      $("ppDl").disabled = false;
+      $("ppDl").onclick = function(){ var b = out.bytes; savePdf(b.buffer.slice(b.byteOffset, b.byteOffset+b.byteLength), name); };
+    }, function(e){ if($("ppMsg")) $("ppMsg").textContent = "Não foi possível gerar a proposta: "+(e && e.message || e); });
+  }, "wide");
+}
+
 /* ---------- Drawer da mentoria ---------- */
 var drawerSid = null;
 function openSession(sid){
